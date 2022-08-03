@@ -19,6 +19,7 @@ globals = {
   "StateManager",
   "AssetManager",
   "SoundManager",
+  "MusicPlayer",
   "PersistantStorage",
   "states",
   "config",

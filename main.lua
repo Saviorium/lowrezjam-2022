@@ -16,6 +16,9 @@ AssetManager:load("data")
 local SoundData = require "data.sound.sound_data"
 SoundManager = require "engine.sound.sound_manager" (SoundData)
 
+local MusicData = require "data.music.music_data"
+MusicPlayer = require "engine.sound.music_player" (MusicData)
+
 states = {
     game = require "game.states.game",
 }
@@ -58,6 +61,7 @@ end
 
 function love.fixedUpdate(dt)
     prof.push("frame")
+    MusicPlayer:update(dt)
     StateManager.update(dt)
 end
 
