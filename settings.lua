@@ -32,6 +32,11 @@ config = {
             ui = 6,
         },
     },
+    render = {
+        screenSize = { x = 64, y = 64 },
+        initialResolution = 4,
+        drawOrderGrid = 4
+    },
 }
 
 Debug = {

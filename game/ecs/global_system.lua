@@ -3,6 +3,8 @@ local Components = require "game.ecs.components"
 
 local DrawSystem            = require "game.ecs.systems.draw_system"
 local MovingSystem          = require "game.ecs.systems.moving_system"
+local PhysicsSystem          = require "game.ecs.systems.physics_system"
+local CameraSystem          = require "game.ecs.systems.camera_system"
 local ControlSystem         = require "game.ecs.systems.control_system"
 local AnimationSystem       = require "game.ecs.systems.animation_system"
 local SoundSystem           = require "game.ecs.systems.sound_system"
@@ -25,7 +27,9 @@ local GlobalSystem = Class {
 
             ControlSystem(self),
             MovingSystem(self),
+            PhysicsSystem(self),
             AnimationSystem(self),
+            CameraSystem(self),
             DrawSystem(self),
             SoundSystem(self),
         }

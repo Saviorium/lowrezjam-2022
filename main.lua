@@ -22,21 +22,37 @@ states = {
 
 fonts = require "data.fonts.fonts"
 
+local pixelCanvas = require "engine.render.global_pixel_canvas" (
+    Vector(config.render.screenSize.x, config.render.screenSize.y),
+    config.render.initialResolution
+)
+
+function getScale()
+    return pixelCanvas:getScale()
+end
+
+function getScreenDimensions()
+    return pixelCanvas.resolution
+end
+
 function love.load()
+
     PersistantStorage:load()
     StateManager.switch(states.game)
 end
 
 function love.draw()
-    love.graphics.setFont(fonts.thin.font)
-    StateManager.draw()
-    if Debug and Debug.showFps == 1 then
-        love.graphics.print(""..tostring(love.timer.getFPS( )), 2, 2)
-    end
-    if Debug and Debug.mousePos == 1 then
-        local x, y = love.mouse.getPosition()
-        love.graphics.print(""..tostring(x)..","..tostring(y), 2, 16)
-    end
+
+    pixelCanvas:renderTo( function()
+        love.graphics.clear({0,0.2,.7,1})
+        love.graphics.setFont(fonts.thin.font)
+        StateManager.draw()
+        if Debug and Debug.showFps == 1 then
+            love.graphics.print(""..tostring(love.timer.getFPS( )), 2, 2)
+        end
+    end )
+    pixelCanvas:draw()
+
     prof.pop("frame")
 end
 
