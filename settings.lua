@@ -1,16 +1,11 @@
 config = {
     inputs = {
         controls = {
-            left = {'key:left'},
-            right = {'key:right'},
-            up = {'key:up'},
-            down = {'key:down'},
-            attack1 = {'key:x'},
-            jump = {'key:z'},
-            startMove = {'key:s'},
-        },
-        pairs = {
-            move = {'left', 'right', 'up', 'down'}
+            beat1 = {'key:z'},
+            beat2 = {'key:x'},
+            beat3 = {'key:c'},
+            beat4 = {'key:v'},
+            hide = {'key:space'},
         },
     },
 
@@ -38,7 +33,12 @@ config = {
         initialResolution = 4,
         drawOrderGrid = 4
     },
-    randomMoveDistance = 10
+    randomMoveDistance = 10,
+
+    music = {
+        rhythmHitTolerance = 0.2,
+        rhythmCompleteMiss = 0.4,
+    },
 }
 
 Debug = {
@@ -46,4 +46,5 @@ Debug = {
     mousePos = 0,
     RhythmPrint = 5,
     drawCollidersDebug = true,
+    BeatLogger = 2,
 }

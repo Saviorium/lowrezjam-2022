@@ -20,8 +20,10 @@ end
 
 function UserInputManager:_saveInputSnapshot()
     local snapshot = {}
+    snapshot.pressed = {}
     for command, _ in pairs(self.inputConfig.controls) do
         snapshot[command] = self.batonInstance:get(command)
+        snapshot.pressed[command] = self.batonInstance:pressed(command)
     end
     for inputPair, _ in pairs(self.inputConfig.pairs) do
         local x, y = self.batonInstance:get(inputPair)

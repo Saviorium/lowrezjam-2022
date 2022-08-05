@@ -10,11 +10,9 @@ function state:enter(prev_state, args)
     local testPlain = require "game.ecs.prefabs.test_plain" (self.world, Vector(-64, 32), 128, 16)
     local testWall1 = require "game.ecs.prefabs.test_plain" (self.world, Vector(-64, -4), 4, 64)
     local testWall2 = require "game.ecs.prefabs.test_plain" (self.world, Vector(32, -4), 4, 64)
+    local dancer = require "game.ecs.prefabs.beat_dancer" (self.world)
 
     print("press M to play music")
-    MusicPlayer:registerRhythmCallback("bar", function() beatLogger(5, "BANG!") end)
-    MusicPlayer:registerRhythmCallback("onBeat", function() beatLogger(5, "ping!") end)
-    MusicPlayer:registerRhythmCallback("offBeat", function() beatLogger(5, "pong!") end)
 end
 
 function state:mousepressed(x, y)

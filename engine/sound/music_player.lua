@@ -102,6 +102,13 @@ function MusicPlayer:registerRhythmCallback(beatsType, fn)
     end
 end
 
+function MusicPlayer:getCurrentBeat()
+    if not self.rhythmModule then
+        return 0
+    end
+    return self.rhythmModule:getCurrentBeat()
+end
+
 function MusicPlayer:update(dt)
     Timer.update(dt)
     if self.isCurrentlyFading then

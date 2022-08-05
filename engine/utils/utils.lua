@@ -61,4 +61,14 @@ Utils.mergeAndClone = function (from, to) -- shallow copy of 'to' with replased 
     return result
 end
 
+function Utils.count(table, condition)
+    local result = 0
+    for k, v in pairs(table) do
+        if condition(v) then
+            result = result + 1
+        end
+    end
+    return result
+end
+
 return Utils

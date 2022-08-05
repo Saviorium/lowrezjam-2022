@@ -7,10 +7,11 @@ local MovingSystem          = require "game.ecs.systems.moving_system"
 local PhysicsSystem         = require "game.ecs.systems.physics_system"
 local CameraSystem          = require "game.ecs.systems.camera_system"
 local ControlSystem         = require "game.ecs.systems.control_system"
-local ActionSystem         = require "game.ecs.systems.action_system"
+local ActionSystem          = require "game.ecs.systems.action_system"
 local AnimationSystem       = require "game.ecs.systems.animation_system"
 local SoundSystem           = require "game.ecs.systems.sound_system"
 local StatesSystem          = require "game.ecs.systems.state_system"
+local BeatSystem            = require "game.ecs.systems.beat_system"
 
 
 local EventManager = require "engine.events.event_manager"
@@ -29,9 +30,10 @@ local GlobalSystem = Class {
         }
         self._systems = { -- order is important
 
-            ActionSystem(self),
             ControlSystem(self),
             StatesSystem(self),
+            BeatSystem(self),
+            ActionSystem(self),
             MovingSystem(self),
             PhysicsSystem(self),
             AnimationSystem(self),

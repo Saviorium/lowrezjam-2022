@@ -123,5 +123,4 @@ function DrawSystem:handleRemoveComponent(component)
     end
 end
 
-
 return DrawSystem

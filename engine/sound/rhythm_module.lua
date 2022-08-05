@@ -106,6 +106,10 @@ function RhythmModule:initMusicData(musicData)
     self.musicData = musicData
 end
 
+function RhythmModule:getCurrentBeat()
+    return self.previousBeatPosition
+end
+
 function RhythmModule:_sendCallbacks(from, to, timeSignature)
     if to < from then
         from = from - timeSignature
