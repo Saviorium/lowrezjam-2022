@@ -12,6 +12,7 @@ local AnimationSystem       = require "game.ecs.systems.animation_system"
 local SoundSystem           = require "game.ecs.systems.sound_system"
 local StatesSystem          = require "game.ecs.systems.state_system"
 local BeatSystem            = require "game.ecs.systems.beat_system"
+local ParticleSystem        = require "game.ecs.systems.particle_system"
 
 
 local EventManager = require "engine.events.event_manager"
@@ -39,6 +40,7 @@ local GlobalSystem = Class {
             AnimationSystem(self),
             CameraSystem(self),
             DrawSystem(self),
+            ParticleSystem(self),
             SoundSystem(self),
         }
     end
