@@ -2,8 +2,8 @@ local log = require "engine.utils.logger" ("Walking")
 return {
     name = "Friction",
     type = "MovingManager",
-    groundFriction = 1000,
-    airFriction = 125,
+    groundFriction = 100,
+    airFriction = 10,
     maxSpeed = 200,
 
     update = function (self, dt, entity)

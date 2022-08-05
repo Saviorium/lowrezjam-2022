@@ -104,6 +104,15 @@ function DrawSystem:draw()
         local arena = config.arena
         love.graphics.rectangle("line", arena.center.x - arena.size.x/2, arena.center.y - arena.size.y/2, arena.size.x, arena.size.y)
     end
+    if Debug.drawCollidersDebug then
+        local shapes = self.globalSystem.HC:hash():shapes()
+        for _, shape in pairs(shapes) do
+            love.graphics.setColor(1, 0, 0, 0.3)
+            shape:draw("fill")
+        end
+    end
+    love.graphics.setColor(1, 1, 1, 1)
+
 end
 
 function DrawSystem:handleRemoveComponent(component)

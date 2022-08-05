@@ -7,6 +7,7 @@ config = {
             down = {'key:down'},
             attack1 = {'key:x'},
             jump = {'key:z'},
+            startMove = {'key:s'},
         },
         pairs = {
             move = {'left', 'right', 'up', 'down'}
@@ -37,10 +38,12 @@ config = {
         initialResolution = 4,
         drawOrderGrid = 4
     },
+    randomMoveDistance = 10
 }
 
 Debug = {
     showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
+    drawCollidersDebug = true,
 }

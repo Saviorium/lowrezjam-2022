@@ -30,6 +30,8 @@ local pixelCanvas = require "engine.render.global_pixel_canvas" (
     config.render.initialResolution
 )
 
+FRAME = 1/60
+
 function getScale()
     return pixelCanvas:getScale()
 end

@@ -7,6 +7,9 @@ local state = {}
 function state:enter(prev_state, args)
     self.world = GlobalSystem()
     local testObject = require "game.ecs.prefabs.test_object" (self.world)
+    local testPlain = require "game.ecs.prefabs.test_plain" (self.world, Vector(-64, 32), 128, 16)
+    local testWall1 = require "game.ecs.prefabs.test_plain" (self.world, Vector(-64, -4), 4, 64)
+    local testWall2 = require "game.ecs.prefabs.test_plain" (self.world, Vector(32, -4), 4, 64)
 
     print("press M to play music")
     MusicPlayer:registerRhythmCallback("bar", function() beatLogger(5, "BANG!") end)
