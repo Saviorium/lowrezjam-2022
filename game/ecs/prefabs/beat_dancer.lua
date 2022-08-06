@@ -1,7 +1,13 @@
+local animator = require "game.ecs.prefabs.dancer_animator"
+
 return function(globalSystem)
+    local animatorInstance = animator:newInstance(AssetManager:getAnimation("vlad-char"))
+    animatorInstance:setVariable("state", "idle")
+
     local ent =  globalSystem:newEntity()
         :addComponent('Position', {position = Vector(1, 1)})
-        :addComponent('DrawRectangle', {size = Vector(5, 5), color = {1,1,0}})
+        :addComponent('Animator', {animator = animatorInstance})
+        :addComponent('DrawAnimation', {center = Vector(4, 7)})
         :addComponent('BeatControlled', {beatTypeToListen = "beat1", inputToSend = "startMove"})
         :addComponent('Controlled')
         :addComponent('Velocity', {velocity = Vector(0,0)})
