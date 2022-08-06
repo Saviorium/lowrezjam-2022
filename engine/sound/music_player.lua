@@ -109,6 +109,20 @@ function MusicPlayer:getCurrentBeat()
     return self.rhythmModule:getCurrentBeat()
 end
 
+function MusicPlayer:getSignature()
+    if not self.rhythmModule then
+        return 4
+    end
+    return self.rhythmModule:getSignature()
+end
+
+function MusicPlayer:getBpm()
+    if not self.rhythmModule then
+        return 120
+    end
+    return self.rhythmModule:getBpm()
+end
+
 function MusicPlayer:update(dt)
     Timer.update(dt)
     if self.isCurrentlyFading then

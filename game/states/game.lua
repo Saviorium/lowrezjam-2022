@@ -11,6 +11,8 @@ function state:enter(prev_state, args)
     local testWall1 = require "game.ecs.prefabs.test_plain" (self.world, Vector(-64, -4), 4, 64)
     local testWall2 = require "game.ecs.prefabs.test_plain" (self.world, Vector(32, -4), 4, 64)
     local dancer = require "game.ecs.prefabs.beat_dancer" (self.world)
+    local cube = require "game.ecs.prefabs.pulsing_cube" (self.world)
+    local bat = require "game.ecs.prefabs.bat" (self.world)
 
     print("press M to play music")
 end

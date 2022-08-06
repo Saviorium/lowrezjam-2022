@@ -73,6 +73,8 @@ local RhythmModule = {
         }
     },
     previousBeatPosition = 0,
+    currentTimeSignature = 4,
+    currentBpm = 120,
     callbacks = {},
     musicData = nil
 }
@@ -100,6 +102,8 @@ function RhythmModule:update(dt)
     --                             (time from bar begining)   /      (beat period)
     self:_sendCallbacks(self.previousBeatPosition, beatPos, timeSignature)
     self.previousBeatPosition = beatPos
+    self.currentTimeSignature = timeSignature
+    self.currentBpm = syncPoint.bpm
 end
 
 function RhythmModule:initMusicData(musicData)
@@ -108,6 +112,14 @@ end
 
 function RhythmModule:getCurrentBeat()
     return self.previousBeatPosition
+end
+
+function RhythmModule:getSignature()
+    return self.currentTimeSignature
+end
+
+function RhythmModule:getBpm()
+    return self.currentBpm
 end
 
 function RhythmModule:_sendCallbacks(from, to, timeSignature)

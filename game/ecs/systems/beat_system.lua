@@ -22,7 +22,7 @@ function BeatSystem:update(dt)
     local keysPressed = Utils.count(input, function(v) return v end)
 
     local beatPos = MusicPlayer:getCurrentBeat()
-    local currentBeat = math.floor(beatPos-0.5) % 4 + 1
+    local currentBeat = math.floor(beatPos-0.5) % MusicPlayer:getSignature() + 1
     if currentBeat ~= self.prevFrameBeat then
         self:handleNextBeat()
     end

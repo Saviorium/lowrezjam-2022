@@ -6,7 +6,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 7, "h": 15 },
     "sourceSize": { "w": 7, "h": 15 },
-    "duration": 300
+    "duration": 500
    },
    {
     "filename": "vlad-char_1.aseprite",
@@ -15,7 +15,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 7, "h": 15 },
     "sourceSize": { "w": 7, "h": 15 },
-    "duration": 300
+    "duration": 500
    }
  ],
  "meta": {

@@ -112,9 +112,13 @@ AnimatorInstance = Class {
     end
 }
 
-
 function AnimatorInstance:play(tag)
     self.animation:setTag(tag)
+    self.animation:play()
+end
+
+function AnimatorInstance:restart()
+    self.animation:stop()
     self.animation:play()
 end
 

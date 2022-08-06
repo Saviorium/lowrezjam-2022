@@ -1,0 +1,91 @@
+{ "frames": [
+   {
+    "filename": "test-pulsing-cube_0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   },
+   {
+    "filename": "test-pulsing-cube_1.aseprite",
+    "frame": { "x": 18, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   },
+   {
+    "filename": "test-pulsing-cube_2.aseprite",
+    "frame": { "x": 36, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   },
+   {
+    "filename": "test-pulsing-cube_3.aseprite",
+    "frame": { "x": 54, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 860
+   },
+   {
+    "filename": "test-pulsing-cube_4.aseprite",
+    "frame": { "x": 72, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   },
+   {
+    "filename": "test-pulsing-cube_5.aseprite",
+    "frame": { "x": 90, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   },
+   {
+    "filename": "test-pulsing-cube_6.aseprite",
+    "frame": { "x": 108, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   },
+   {
+    "filename": "test-pulsing-cube_7.aseprite",
+    "frame": { "x": 126, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 20
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.30",
+  "image": "test-pulsing-cube.png",
+  "format": "RGBA8888",
+  "size": { "w": 144, "h": 18 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 7, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
