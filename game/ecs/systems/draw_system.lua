@@ -56,7 +56,12 @@ function DrawSystem:draw()
             end
 
             local pos = entity:getComponentByName("Position").position
-            love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
+            local rotateEntity = entity:getComponentByName("RotateThisThing") ~= nil
+            if rotateEntity then
+                love.graphics.translate(pos.x, pos.y)
+            else
+                love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
+            end
 
             local shaking = entity:getComponentByName("Shaking")
             if shaking and shaking.isActive then
@@ -75,6 +80,10 @@ function DrawSystem:draw()
             end
             for _, drawable in pairs(entity:getComponentsByType("Drawable")) do
                 love.graphics.push()
+                if rotateEntity then
+                    local rotation = entity:getComponentByName("Rotation").rotation
+                    love.graphics.rotate( rotation*math.pi/180 + math.pi/2)
+                end
                 local scale = entity:getComponentByName("Scaled")
                 if scale then
                     scale = scale.scale

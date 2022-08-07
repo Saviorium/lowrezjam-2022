@@ -8,7 +8,7 @@ return function(globalSystem, position)
 
     local ent =  globalSystem:newEntity()
         :addComponent('Position', {position = position})
-        :addComponent('DrawRectangle', {size = Vector(width, height)})
+        --:addComponent('DrawRectangle', {size = Vector(width, height)})
         :addComponent('PhysicsCollider', {collider = physicsCollider})
 
     return ent

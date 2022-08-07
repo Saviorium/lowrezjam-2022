@@ -1,42 +1,27 @@
 local System = require "game.ecs.systems.system"
 
-local CameraSystem = Class {
+local MouseCameraSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
         System.init(self, {'CameraTarget', 'Position'})
         self.mainCamera = nil
-    end
+    end,
+
+    drawableWorldSize = Vector(
+        config.worldSize.x - config.render.screenSize.x,
+        config.worldSize.y - config.render.screenSize.y
+    ),
 }
 
-function CameraSystem:handleUpdateEntityFunc(dt, entityId, entity)
-    -- local target = entity:getComponentsByType("CameraTarget")[1]
-    -- if target.isMain then
-    --     self.mainCamera = entity
-    -- end
-    -- if target.inGoingToBeMain then
-    --     target.isMain = true
-    --     target.inGoingToBeMain = false
-    --     if self.mainCamera then
-    --         self.mainCamera:getComponentsByName("CameraTarget")[1].isMain = false
-    --     end
-    --     self.mainCamera = entity
-    -- end
-    -- target:update(dt)
-
-end
-
-function CameraSystem:handleDrawEntityFunc(entityId, entity)
-    -- local target = entity:getComponentsByType("CameraTarget")[1]
-    -- if not target.isMain then
-    --     return
-    -- end
-
+function MouseCameraSystem:draw()
     love.graphics.push()
-    local x, y = love.mouse.getPosition()
-    x = math.clamp(-128, x/4 - 64, 128)
-    y = math.clamp(-128, y/6 - 64, -16)
-    love.graphics.scale(1, 1)
-    love.graphics.translate(math.floor(-x), math.floor(-y))
+    local mouseX, mouseY = love.mouse.getPosition()
+    mouseX = mouseX / love.graphics.getWidth()
+    mouseY = mouseY / love.graphics.getHeight()
+
+    local worldPosX = math.lerp(0, self.drawableWorldSize.x, mouseX)
+    local worldPosY = math.lerp(0, self.drawableWorldSize.y, mouseY)
+    love.graphics.translate(math.floor(-worldPosX), math.floor(-worldPosY))
 end
 
-return CameraSystem
+return MouseCameraSystem

@@ -15,6 +15,10 @@ config = {
         }
     },
 
+    worldSize = {
+        x=256,
+        y=256,
+    },
     colors = {
         red = { 0.9, 0.1, 0.2 },
     },

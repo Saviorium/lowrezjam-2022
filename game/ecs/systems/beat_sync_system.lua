@@ -1,7 +1,4 @@
 local System = require "game.ecs.systems.system"
-local InputManager = require "engine.controls.user_input_manager" (config.inputs)
-
-local log = require "engine.utils.logger" ('BeatLogger')
 
 local BeatSyncSystem = Class {
     __includes = System,

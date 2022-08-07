@@ -10,7 +10,7 @@ return function(globalSystem)
     animatorInstance:setVariable("state", "idle")
 
     local ent =  globalSystem:newEntity()
-        :addComponent('Position', {position = Vector(1, 1)})
+        :addComponent('Position', {position = Vector(158, 128)})
         :addComponent('Velocity', {velocity = Vector(0,0)})
 
         :addComponent('Animator', {animator = animatorInstance})

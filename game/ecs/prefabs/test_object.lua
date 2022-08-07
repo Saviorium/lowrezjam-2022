@@ -6,7 +6,7 @@ return function(globalSystem)
     physicsCollider.type = 'Unit'
 
     local ent =  globalSystem:newEntity()
-        :addComponent('Position', {position = Vector(0, 16)})
+        :addComponent('Position', {position = Vector(0, 128)})
         :addComponent('DrawRectangle', {size = Vector(width, height)})
         :addComponent('PhysicsCollider', {collider = physicsCollider, center = Vector(width/2, height/2)})
         :addComponent('UserControlled')
