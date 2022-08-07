@@ -33,8 +33,8 @@ local GlobalSystem = Class {
         self._systems = { -- order is important
 
             ControlSystem(self),
-            StatesSystem(self),
             BeatSystem(self),
+            StatesSystem(self),
             BeatSyncSystem(self),
             ActionSystem(self),
             MovingSystem(self),

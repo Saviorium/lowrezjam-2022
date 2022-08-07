@@ -26,6 +26,7 @@ function BeatSystem:update(dt)
     if currentBeat ~= self.prevFrameBeat then
         self:handleNextBeat()
     end
+
     local isOnBeat = self.isHitOnBeat(beatPos)
     local missBeat = self.isMissedBeat(beatPos)
 
@@ -52,12 +53,19 @@ function BeatSystem:update(dt)
         end
     end
 
+    for _, entity in pairs(self.pool) do
+        local beatMapping = entity:getComponentByName("BeatControlled")
+        local beatDelta = self.prevFrameBeat <= currentBeat and (currentBeat - self.prevFrameBeat) or (currentBeat - self.prevFrameBeat + 4)
+        beatMapping.beatsFromLastInput = (beatMapping.beatsFromLastInput or 0) + beatDelta
+    end
+
     self.prevFrameBeat = currentBeat
 end
 
 function BeatSystem:sendInputToEntites(input)
     for _, entity in pairs(self.pool) do
         local beatMapping = entity:getComponentByName("BeatControlled")
+        beatMapping.beatsFromLastInput = 0
         if input[beatMapping.beatTypeToListen] then
             local controller = entity:getComponentByName("Controlled")
             controller.inputSnapshot[beatMapping.inputToSend] = 1

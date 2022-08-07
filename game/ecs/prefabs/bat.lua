@@ -7,16 +7,21 @@ return function(globalSystem)
 
     local ent =  globalSystem:newEntity()
         :addComponent('Position', {position = Vector(128, 128)})
-        :addComponent('Animator', {animator = animatorInstance})
-        :addComponent('DrawAnimation', {center = Vector(4, 7)})
-        :addComponent('Controlled')
-        :addComponent('DummyControlled') -- to get normal inputs from ControlSystem
         :addComponent('Velocity', {velocity = Vector(0,0)})
-        :addComponent('StateMachine', {states = stateMachine()})
-        :addComponent('FlyInRandomDirection', {input="jump"})
-        :addComponent('ActionToBeat')
         :addComponent('Flying')
         :addComponent('Friction')
+
+        :addComponent('Animator', {animator = animatorInstance})
+        :addComponent('DrawAnimation', {center = Vector(4, 7)})
+
+        :addComponent('Controlled')
+        :addComponent('DummyControlled') -- to get normal inputs from ControlSystem
+
+        :addComponent('StateMachine', {states = stateMachine()})
+        :addComponent('FlyInRandomDirection', {input="jump"})
+        :addComponent('BatCombo')
+
+        :addComponent('ActionToBeat')
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
         :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100, input="jump"})
 

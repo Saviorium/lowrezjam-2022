@@ -28,7 +28,8 @@ return function(globalSystem)
         :addComponent('Jumping', {maxSpeed = 1000, jumpForce = 1000})
 
         :addComponent('StateMachine', {states = stateMachine()})
-        :addComponent('MoveInRandomDirection')
+        --:addComponent('MoveInRandomDirection')
+        :addComponent('NormCombo')
 
         :addComponent('CameraToObjects')
         :addComponent('PrintDebugMessage')

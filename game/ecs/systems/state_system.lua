@@ -24,7 +24,7 @@ function StateSystem:handleUpdateEntityFunc(dt, entityId, entity)
         stateMachine:__switchState(stateMachine.__nextState.state, stateMachine.__nextState.params)
         stateMachine.__nextState = nil
     end
-    entity:getComponentByName("StateMachine"):update(dt)
+    stateMachine:update(dt)
     if freezeComp and freezeComp.freezed then
         freezeComp.freezeTimer = self.freezeTime
         freezeComp.freezed = false

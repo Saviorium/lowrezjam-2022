@@ -1,41 +1,47 @@
 local CharacterState = require "game.statemachines.default_character_state"
 local State = require "game.statemachines.state"
 
-local MoveInRandomDirection = Class {
+local NormStartCombo = Class {
     __includes = State,
     init = function(self)
         State.init(self)
-        self.name = "move_in_random_direction"
-        self.timeout = 15 * FRAME
-        self.timeoutInBeats = 2
+        self.name = "start_combo"
+        self.timeout = 5
+        self.timeoutInBeats = 5
         self.nextState = "idle"
 
-        self.randomMoveDistance = config.randomMoveDistance
-        self.direction = nil
         self.inputController = nil
+        self.beat = 0
     end
 }
 
-function MoveInRandomDirection:onEnter(entity, params)
+function NormStartCombo:onEnter(entity, params)
     -- local animator = entity:getComponentByName("Animator").animator
     -- animator:setVariable("state", "dash_back_active")
-    self.direction = nil
+    self.beatsToNextDanceMove = params.beatsToNextDanceMove
+    self.nextDanceMove = params.nextDanceMove
+    self.input = params.input
+
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")
 end
 
-function MoveInRandomDirection:onExit(entity)
+function NormStartCombo:onExit(entity)
 end
 
-function MoveInRandomDirection:update(entity, dt)
+function NormStartCombo:update(entity, dt)
+    --print(self.beatControlled.beatsFromLastInput)
     local stateMachine = entity:getComponentByName("StateMachine")
-    self.direction = self.direction or Vector(love.math.random(-1,1), 0)
-    self.inputController.inputSnapshot.move.x = self.direction.x
-    -- self.inputController.inputSnapshot.move.y = directionVector:normalized().y
+    
+    if self.inputController.inputSnapshot[self.input] == 1 and (self.beat == self.beatsToNextDanceMove) then
+        stateMachine:goToState(self.nextDanceMove, params)
+    end 
 
     if self.beatControlled.beatsFromLastInput > self.timeoutInBeats then
         stateMachine:goToState(self.nextState, params)
     end
+    self.beat = self.beatControlled.beatsFromLastInput or 0
+
 end
 
-return MoveInRandomDirection
+return NormStartCombo
