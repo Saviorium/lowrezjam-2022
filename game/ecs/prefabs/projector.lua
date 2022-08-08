@@ -15,6 +15,7 @@ return function(globalSystem, position, initialState)
         :addComponent('Controlled')
         :addComponent('RotateThisThing')
         :addComponent('Rotation')
+        :addComponent('SinusRotation')
         :addComponent('Colored', {color = config.colors.red})
 
     return ent

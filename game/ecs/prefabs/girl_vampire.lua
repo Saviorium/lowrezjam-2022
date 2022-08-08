@@ -2,28 +2,28 @@ local animator = require "game.ecs.prefabs.dancer_animator"
 local stateMachine = require "game.statemachines.character_states"
 
 return function(globalSystem, position)
-    local width, height = 7,7
+    local width, height = 7,14
     local physicsCollider = globalSystem.HC:rectangle(0, 0, width, height)
     physicsCollider.type = 'Unit'
 
-    local animatorInstance = animator:newInstance(AssetManager:getAnimation("small-vamp-char"))
+    local animatorInstance = animator:newInstance(AssetManager:getAnimation("vamp-girl"))
     animatorInstance:setVariable("state", "idle")
 
     local ent =  globalSystem:newEntity()
         :addComponent('Position', {position = position})
         :addComponent('Velocity', {velocity = Vector(0,0)})
 
-        :addComponent('Walking', {maxSpeed = config.speed.fast})
+        :addComponent('Walking', {maxSpeed = config.speed.average})
         :addComponent('Falling')
-        :addComponent('Friction')
-        :addComponent('Jumping', {maxSpeed = 10, jumpForce = 1000})
+        :addComponent('Friction', {airFriction = 3})
+        :addComponent('Jumping', {maxSpeed = 200, jumpForce = 1000})
 
         -- :addComponent('DrawRectangle', {size = Vector(width, height)})
         :addComponent('Animator', {animator = animatorInstance})
         :addComponent('PhysicsCollider', {collider = physicsCollider})
-        :addComponent('DrawAnimation', {center = Vector(5, 5)})
-
-        :addComponent('BeatControlled', {beatTypeToListen = "beat4", inputToSend = "startMove"})
+        :addComponent('DrawAnimation', {center = Vector(10, 7)})
+        
+        :addComponent('BeatControlled', {beatTypeToListen = "beat3", inputToSend = "startMove"})
         :addComponent('Controlled')
 
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
@@ -31,7 +31,7 @@ return function(globalSystem, position)
 
         :addComponent('StateMachine', {states = stateMachine()})
         --:addComponent('MoveInRandomDirection')
-        :addComponent('SmallCombo')
+        :addComponent('GirlCombo')
 
         :addComponent('PrintDebugMessage')
 

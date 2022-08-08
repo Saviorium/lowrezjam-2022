@@ -1,7 +1,7 @@
 local animator = require "game.ecs.prefabs.dancer_animator"
 local stateMachine = require "game.statemachines.character_states"
 
-return function(globalSystem)
+return function(globalSystem, position)
     local width, height = 7,14
     local physicsCollider = globalSystem.HC:rectangle(0, 0, width, height)
     physicsCollider.type = 'Unit'
@@ -10,7 +10,7 @@ return function(globalSystem)
     animatorInstance:setVariable("state", "idle")
 
     local ent =  globalSystem:newEntity()
-        :addComponent('Position', {position = Vector(158, 128)})
+        :addComponent('Position', {position = position})
         :addComponent('Velocity', {velocity = Vector(0,0)})
 
         :addComponent('Animator', {animator = animatorInstance})
@@ -22,10 +22,10 @@ return function(globalSystem)
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
         :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100})
 
-        :addComponent('Walking', {maxSpeed = 50})
+        :addComponent('Walking', {maxSpeed = config.speed.slow})
         :addComponent('Falling')
         :addComponent('Friction')
-        :addComponent('Jumping', {maxSpeed = 1000, jumpForce = 1000})
+        :addComponent('Jumping', {maxSpeed = 10, jumpForce = 1000})
 
         :addComponent('StateMachine', {states = stateMachine()})
         --:addComponent('MoveInRandomDirection')

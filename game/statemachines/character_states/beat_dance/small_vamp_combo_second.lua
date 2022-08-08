@@ -1,37 +1,38 @@
 local CharacterState = require "game.statemachines.default_character_state"
 local State = require "game.statemachines.state"
 
-local StartCombo = Class {
+local SmallVampCombo = Class {
     __includes = State,
     init = function(self)
         State.init(self)
-        self.name = "start_combo"
+        self.name = "small_vamp_combo_second"
         self.timeout = 5
         self.timeoutInBeats = 5
         self.nextState = "idle"
+
+        self.beatsToNextDanceMove = 1
+        self.nextDanceMove = 'small_vamp_combo_third'
 
         self.inputController = nil
         self.beat = 0
     end
 }
 
-function StartCombo:onEnter(entity, params)
-    -- local animator = entity:getComponentByName("Animator").animator
-    -- animator:setVariable("state", "dash_back_active")
-    self.beatsToNextDanceMove = params.beatsToNextDanceMove
-    self.nextDanceMove = params.nextDanceMove
+function SmallVampCombo:onEnter(entity, params)
     self.input = params.input
-
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")
 end
 
-function StartCombo:update(entity, dt)
-    --print(self.beatControlled.beatsFromLastInput)
+function SmallVampCombo:update(entity, dt)
+
     local stateMachine = entity:getComponentByName("StateMachine")
 
     if self.inputController.inputSnapshot[self.input] == 1 and self:checkIfInputNearBeat(self.beat, self.beatsToNextDanceMove) then
-        stateMachine:goToState(self.nextDanceMove, params)
+        local position = entity:getComponentByName("Position")
+        position.x = math.clamp(-config.worldSize.x, position.x + love.math.random(-1,1) * config.teleportDistance, config.worldSize.x)
+        
+        stateMachine:goToState(self.nextDanceMove, {input = self.input})
     end 
 
     if self.beatControlled.beatsFromLastInput > self.timeoutInBeats then
@@ -41,8 +42,8 @@ function StartCombo:update(entity, dt)
 
 end
 
-function StartCombo:checkIfInputNearBeat(curBeat, targetBeat)
+function SmallVampCombo:checkIfInputNearBeat(curBeat, targetBeat)
     return math.abs(curBeat - targetBeat) < config.music.rhythmHitTolerance
 end
 
-return StartCombo
+return SmallVampCombo

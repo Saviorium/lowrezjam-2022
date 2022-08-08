@@ -19,6 +19,8 @@ local MoveInRandomDirection = Class {
 function MoveInRandomDirection:onEnter(entity, params)
     -- local animator = entity:getComponentByName("Animator").animator
     -- animator:setVariable("state", "dash_back_active")
+    self.timeoutInBeats = params and params.timeoutInBeats or 2
+
     self.direction = nil
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")

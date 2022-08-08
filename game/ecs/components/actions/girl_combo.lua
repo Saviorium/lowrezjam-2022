@@ -1,5 +1,5 @@
 return { -- abstract action
-    name = "BatCombo",
+    name = "GirlCombo",
     type = "Action",
     oneShot = false, -- run on the first frame of input or every frame
     input = 'startMove',
@@ -12,7 +12,8 @@ return { -- abstract action
     onActive = function(self)
         local stateMachine = self.entity:getComponentByName("StateMachine")
         if stateMachine.currentState then
-            stateMachine:goToState("start_combo", {beatsToNextDanceMove = 1, nextDanceMove = 'fly_in_random_direction', input = self.input})
+            stateMachine:goToState("girl_vamp_combo")
+            --, {beatsToNextDanceMove = 6, nextDanceMove = 'fly_in_random_direction', input = self.input})
         end
     end
 }

@@ -10,6 +10,7 @@ local BeatSystem = Class {
 
         self.streak = 0
         self.prevFrameBeat = 0
+        self.prevFrameBeatUnFloored = 0
         self.keysPressedOnCurrentBeat = 0
         self.offBeatHappened = false
         self.isInputSent = false
@@ -55,11 +56,12 @@ function BeatSystem:update(dt)
 
     for _, entity in pairs(self.pool) do
         local beatMapping = entity:getComponentByName("BeatControlled")
-        local beatDelta = self.prevFrameBeat <= currentBeat and (currentBeat - self.prevFrameBeat) or (currentBeat - self.prevFrameBeat + 4)
+        local beatDelta = self.prevFrameBeatUnFloored <= beatPos and (beatPos - self.prevFrameBeatUnFloored) or (beatPos - self.prevFrameBeatUnFloored + 4)
         beatMapping.beatsFromLastInput = (beatMapping.beatsFromLastInput or 0) + beatDelta
     end
 
     self.prevFrameBeat = currentBeat
+    self.prevFrameBeatUnFloored = beatPos
 end
 
 function BeatSystem:sendInputToEntites(input)

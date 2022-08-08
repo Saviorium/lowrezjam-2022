@@ -43,6 +43,12 @@ config = {
         rhythmHitTolerance = 0.2,
         rhythmCompleteMiss = 0.4,
     },
+    speed = {
+        slow = 8,
+        average = 12,
+        fast = 16
+    },
+    teleportDistance = 16
 }
 
 Debug = {
