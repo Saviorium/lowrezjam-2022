@@ -30,7 +30,7 @@ function SmallVampCombo:update(entity, dt)
 
     if self.inputController.inputSnapshot[self.input] == 1 and self:checkIfInputNearBeat(self.beat, self.beatsToNextDanceMove) then
         local position = entity:getComponentByName("Position")
-        position.x = math.clamp(-config.worldSize.x, position.x + love.math.random(-1,1) * config.teleportDistance, config.worldSize.x)
+        position.position.x = math.clamp(-config.worldSize.x, position.position.x + love.math.random(-1,1) * config.teleportDistance, config.worldSize.x)
         
         stateMachine:goToState(self.nextDanceMove, {input = self.input})
     end 
