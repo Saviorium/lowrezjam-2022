@@ -11,6 +11,9 @@ function state:enter(prev_state, args)
     local testWall1 = require "game.ecs.prefabs.test_plain" (self.world, Vector(0, 191-64), 4, 64)
     local testWall2 = require "game.ecs.prefabs.test_plain" (self.world, Vector(250, 191-64), 4, 64)
     local ball = require "game.ecs.prefabs.disco_ball" (self.world)
+    local danceFloor = require "game.ecs.prefabs.dance_floor" (self.world)
+    local dj = require "game.ecs.prefabs.dj_character" (self.world)
+    local djBooth = require "game.ecs.prefabs.dj_booth" (self.world)
     local bg = require "game.ecs.prefabs.background" (self.world)
 
     -- Денсеры

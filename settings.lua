@@ -28,11 +28,12 @@ config = {
     draw = {
         layers = { -- must be consecutive
             bg = 1,
-            common = 2,
-            characterBack = 3,
-            characterFront = 4,
-            bullets = 5,
-            ui = 6,
+            bgFront = 2,
+            common = 3,
+            characterBack = 4,
+            characterFront = 5,
+            bullets = 6,
+            ui = 7,
         },
     },
     render = {
@@ -58,6 +59,6 @@ Debug = {
     showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
-    drawCollidersDebug = true,
+    drawCollidersDebug = false,
     BeatLogger = 2,
 }

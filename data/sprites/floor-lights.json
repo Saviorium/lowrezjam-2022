@@ -1,0 +1,38 @@
+{ "frames": [
+   {
+    "filename": "floor-lights_0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 109, "h": 14 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 32, "y": 19, "w": 107, "h": 12 },
+    "sourceSize": { "w": 160, "h": 57 },
+    "duration": 1000
+   },
+   {
+    "filename": "floor-lights_1.aseprite",
+    "frame": { "x": 109, "y": 0, "w": 109, "h": 14 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 32, "y": 19, "w": 107, "h": 12 },
+    "sourceSize": { "w": 160, "h": 57 },
+    "duration": 1000
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.30",
+  "image": "floor-lights.png",
+  "format": "RGBA8888",
+  "size": { "w": 218, "h": 14 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "dancing", "from": 0, "to": 1, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "dancefloor", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 1", "opacity": 255, "blendMode": "color_dodge" }
+  ],
+  "slices": [
+  ]
+ }
+}
