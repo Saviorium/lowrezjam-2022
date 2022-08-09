@@ -106,6 +106,25 @@ function RhythmModule:update(dt)
     self.currentBpm = syncPoint.bpm
 end
 
+function RhythmModule:getTimeTillBar(barDivisor)
+    if not barDivisor then
+        barDivisor = 1
+    end
+    if not self.musicData.source or not self.musicData.source:isPlaying() then
+        return 0
+    end
+    local signature = self:getSignature()
+    local beatLength = 60/self:getBpm()
+    local timeToBar = (1+signature - self:getCurrentBeat()) * beatLength
+
+    local barLength = beatLength*signature
+    local trackPos = self.musicData.source:tell()
+    local currentBar = math.floor(trackPos/barLength)
+
+    local barsToWait = signature - (currentBar % barDivisor) - 1 - (signature-barDivisor)
+    return barsToWait * barLength + timeToBar
+end
+
 function RhythmModule:initMusicData(musicData)
     self.musicData = musicData
 end

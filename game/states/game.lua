@@ -34,19 +34,19 @@ end
 
 function state:keypressed(key)
     if key == "m" then
-        MusicPlayer:play("testLoop", "out-instant")
+        MusicPlayer:play("testLoop", "new-bar")
     end
     if key == "q" then
-        MusicPlayer:play("night1", "out-instant")
+        MusicPlayer:play("night1", "forth-bar")
     end
     if key == "w" then
-        MusicPlayer:play("night2", "out-instant")
+        MusicPlayer:play("night2", "forth-bar")
     end
     if key == "e" then
-        MusicPlayer:play("night3", "out-instant")
+        MusicPlayer:play("night3", "forth-bar")
     end
     if key == "r" then
-        MusicPlayer:play("night1Chill", "out-instant")
+        MusicPlayer:play("night1Chill", "forth-bar")
     end
 end
 

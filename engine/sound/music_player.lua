@@ -27,7 +27,13 @@ local MusicPlayer = {
 
         --  _________  _________
         --  old_track\|new_track
-        "out-instant"
+        "out-instant",
+
+        -- 1-2-3-4|new_track
+        "new-bar",
+
+        -- 1234-1234-1234-1234|new_track
+        "forth-bar",
     }
 }
 
@@ -62,6 +68,33 @@ function MusicPlayer:play(track, fading)
     if fading == "out-instant" then
         self.isCurrentlyFading = true
         Timer.tween(self.fadingTime, self.fadingVolume, {0}, "linear",
+            function()
+                self:_switchToTrackIfNotAlreadyPlaying(track)
+                self.fadingVolume = {1}
+                self:_setVolume()
+                self.isCurrentlyFading = false
+            end
+        )
+        return
+    end
+
+    if fading == "new-bar" and self.rhythmModule and self:isPlaying() then
+        self.isCurrentlyFading = true
+        local timeToWait = self.rhythmModule:getTimeTillBar(1)
+        Timer.tween(timeToWait, self.fadingVolume, {1}, "linear",
+            function()
+                self:_switchToTrackIfNotAlreadyPlaying(track)
+                self.fadingVolume = {1}
+                self:_setVolume()
+                self.isCurrentlyFading = false
+            end
+        )
+        return
+    end
+    if fading == "forth-bar" and self.rhythmModule and self:isPlaying() then
+        self.isCurrentlyFading = true
+        local timeToWait = self.rhythmModule:getTimeTillBar(4)
+        Timer.tween(timeToWait, self.fadingVolume, {1}, "linear",
             function()
                 self:_switchToTrackIfNotAlreadyPlaying(track)
                 self.fadingVolume = {1}
@@ -185,6 +218,7 @@ function MusicPlayer:_switchToTrackIfNotAlreadyPlaying(track)
     self.currentTrack.name = track
     self.currentTrack.metadata = trackData
     self.currentTrack.source = AssetManager:getSound(trackData.fileName)
+    self.currentTrack.previousPosition = 0,
     self:_playCurrentSource()
 end
 
