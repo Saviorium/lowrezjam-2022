@@ -9,6 +9,7 @@ local MusicPlayer = {
         name = nil,
         source = nil,
         metadata = nil,
+        previousPosition = 0,
     },
     rhythmModule = require("engine.sound.rhythm_module"),
     globalMusicVolume = 1,
@@ -128,10 +129,31 @@ function MusicPlayer:update(dt)
     if self.isCurrentlyFading then
         self:_setVolume()
     end
-    -- TODO: check music looped to go to the looping point
+
+    if self:isPlaying() and self.currentTrack.metadata.loopPoint then
+        local trackPos = self.currentTrack.source:tell()
+        if trackPos < self.currentTrack.previousPosition and self.currentTrack.source:isLooping() then
+            local loopPoint = self.currentTrack.metadata.loopPoint
+            self.currentTrack.source:seek(loopPoint)
+            trackPos = loopPoint
+        end
+        self.currentTrack.previousPosition = trackPos
+    end
+
     if self.rhythmModule then
         self.rhythmModule:update(dt)
     end
+end
+
+function MusicPlayer:isPlaying(track)
+    if self.currentTrack.source and self.currentTrack.source:isPlaying() then
+        if track then
+            return self.currentTrack.name == track
+        else
+            return true
+        end
+    end
+    return false
 end
 
 function MusicPlayer:_setVolume()
