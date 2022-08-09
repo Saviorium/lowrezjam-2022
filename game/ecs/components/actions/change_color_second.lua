@@ -1,19 +1,17 @@
 return { -- abstract action
-    name = "FlyInRandomDirection",
+    name = "ChangeColorSecond",
     type = "Action",
     oneShot = false, -- run on the first frame of input or every frame
     input = 'startMove',
     entity = nil,
-    staminaNeeded = 0,
+    color = {1,1,1,1},
 
     canUse = function(self)
         return true
     end,
 
     onActive = function(self)
-        local stateMachine = self.entity:getComponentByName("StateMachine")
-        if stateMachine.currentState then
-            stateMachine:goToState("fly_in_random_direction")
-        end
+        local colored = self.entity:getComponentByName("Colored")
+        colored.color = self.color
     end
 }

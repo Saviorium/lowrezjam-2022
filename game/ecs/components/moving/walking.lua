@@ -21,11 +21,11 @@ return {
             velocity.x = math.clamp(-self.maxSpeed, velocity.x, self.maxSpeed)
         end
 
-        velocity.y = velocity.y + dt*60*snapshot.move.y*self.acceleration
-        velocity.y = math.abs(velocity.y) - self.friction*dt > 0 and velocity.y - dirrectY * self.friction*dt or 0
-        if not self.dashing then
-            velocity.y = math.clamp(-self.maxSpeed, velocity.y, self.maxSpeed)
-        end
+        -- velocity.y = velocity.y + dt*60*snapshot.move.y*self.acceleration
+        -- velocity.y = math.abs(velocity.y) - self.friction*dt > 0 and velocity.y - dirrectY * self.friction*dt or 0
+        -- if not self.dashing then
+        --     velocity.y = math.clamp(-self.maxSpeed, velocity.y, self.maxSpeed)
+        -- end
         if self.dashing then
             self.dashingTimer = self.dashingTimer - dt
         end

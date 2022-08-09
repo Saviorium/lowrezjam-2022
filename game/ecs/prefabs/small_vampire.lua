@@ -23,14 +23,16 @@ return function(globalSystem, position)
         :addComponent('PhysicsCollider', {collider = physicsCollider})
         :addComponent('DrawAnimation', {center = Vector(5, 5)})
 
-        :addComponent('BeatControlled', {beatTypeToListen = "beat4", inputToSend = "startMove"})
+        :addComponent('BeatControlled', {beatMap = {
+                                                    {listen = "beat1",send = "startMove"},
+                                                   }
+                                        })
         :addComponent('Controlled')
 
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
         :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100})
 
         :addComponent('StateMachine', {states = stateMachine()})
-        --:addComponent('MoveInRandomDirection')
         :addComponent('SmallCombo')
 
         :addComponent('PrintDebugMessage')

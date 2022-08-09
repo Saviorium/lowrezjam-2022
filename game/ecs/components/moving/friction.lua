@@ -3,7 +3,7 @@ return {
     name = "Friction",
     type = "MovingManager",
     groundFriction = 100,
-    airFriction = 10,
+    airFriction = 1000,
     maxSpeed = 200,
 
     update = function (self, dt, entity)

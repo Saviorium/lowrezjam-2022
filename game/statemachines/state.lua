@@ -27,4 +27,8 @@ function State:tryToSwitchByTimeout(entity, params)
     end
 end
 
+function State:checkIfInputNearBeat(curBeat, targetBeat)
+    return math.abs(curBeat - targetBeat) < config.music.rhythmHitTolerance
+end
+
 return State

@@ -5,7 +5,7 @@ musicData = {
         fileName = "test-synthwave-loop-1",
         loop = true,
         loopPoint = 0,
-        volume = 0.5,
+        volume = 0.25,
         syncPoints = {
             {
                 time = 0,

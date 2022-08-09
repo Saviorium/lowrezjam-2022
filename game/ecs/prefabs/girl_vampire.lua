@@ -23,7 +23,10 @@ return function(globalSystem, position)
         :addComponent('PhysicsCollider', {collider = physicsCollider})
         :addComponent('DrawAnimation', {center = Vector(10, 7)})
         
-        :addComponent('BeatControlled', {beatTypeToListen = "beat3", inputToSend = "startMove"})
+        :addComponent('BeatControlled', {beatMap = {
+                                                    {listen = "beat1",send = "startMove"},
+                                                   }
+                                        })
         :addComponent('Controlled')
 
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})

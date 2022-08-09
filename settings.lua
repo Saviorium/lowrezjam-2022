@@ -21,6 +21,9 @@ config = {
     },
     colors = {
         red = { 0.9, 0.1, 0.2 },
+        blue = { 0.1, 0.2, 0.9 },
+        green = { 0.1, 0.9, 0.2 },
+        purple = { 0.9, 0.1, 0.7 },
     },
     draw = {
         layers = { -- must be consecutive

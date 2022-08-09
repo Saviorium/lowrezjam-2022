@@ -22,16 +22,18 @@ return {
         end
 
             if collisionWithEnv then
-                if self.bouncing and self.bouncing > 0 and math.abs(velocity.y) > self.minBounceSpeed then
-                    velocity.y = -math.abs(velocity.y/self.bouncing)
-                else
-                    --position.y = 0
-                    velocity.y = 0
-                    self.isGrounded = true
-                end
+                -- if self.bouncing and self.bouncing > 0 and math.abs(velocity.y) > self.minBounceSpeed then
+                --     velocity.y = -math.abs(velocity.y/self.bouncing)
+                -- else
+                --     --position.y = 0
+                --     velocity.y = 0
+                --     self.isGrounded = true
+                -- end
+                velocity.y = 0
+                self.isGrounded = true
             elseif not (self.isGrounded) then
                 velocity.y = velocity.y + self.g
-            else
+            elseif velocity.y < 0 then
                 self.isGrounded = false
             end
         end

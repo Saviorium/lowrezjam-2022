@@ -11,7 +11,7 @@ return { -- abstract action
 
     onActive = function(self)
         local stateMachine = self.entity:getComponentByName("StateMachine")
-        if stateMachine.currentState then
+        if stateMachine.currentState and stateMachine.currentState.name == 'idle' then
             stateMachine:goToState("small_vamp_combo_first", {input = self.input})
         end
     end

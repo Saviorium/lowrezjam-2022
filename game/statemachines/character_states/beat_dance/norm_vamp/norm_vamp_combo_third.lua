@@ -5,27 +5,30 @@ local SmallVampCombo = Class {
     __includes = State,
     init = function(self)
         State.init(self)
-        self.name = "small_vamp_combo_third"
+        self.name = "norm_vamp_combo_third"
         self.timeout = 5
         self.timeoutInBeats = 2
         self.nextState = "idle"
 
         self.inputController = nil
-        self.beat = 0
     end
 }
 
 function SmallVampCombo:onEnter(entity, params)
+    self.beat = 0
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")
 end
 
 function SmallVampCombo:update(entity, dt)
 
-    if self.beatControlled.beatsFromLastInput > self.timeoutInBeats then
+    local stateMachine = entity:getComponentByName("StateMachine")
+    
+    if self.beat > self.timeoutInBeats then
         stateMachine:goToState(self.nextState, params)
     end
-    self.beat = self.beatControlled.beatsFromLastInput or 0
+
+    self.beat = self.beat + (self.beatControlled.beatDelta or 0)
 
 end
 

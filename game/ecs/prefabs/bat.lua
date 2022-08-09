@@ -21,7 +21,10 @@ return function(globalSystem, position)
         :addComponent('PhysicsCollider', {collider = physicsCollider})
 
         :addComponent('Controlled')
-        :addComponent('BeatControlled', {beatTypeToListen = "beat2", inputToSend = "startMove"})
+        :addComponent('BeatControlled', {beatMap = {
+                                                    {listen = "beat1",send = "startMove"},
+                                                   }
+                                        })
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
         :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100})
 

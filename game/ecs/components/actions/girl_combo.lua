@@ -11,9 +11,8 @@ return { -- abstract action
 
     onActive = function(self)
         local stateMachine = self.entity:getComponentByName("StateMachine")
-        if stateMachine.currentState then
-            stateMachine:goToState("girl_vamp_combo")
-            --, {beatsToNextDanceMove = 6, nextDanceMove = 'fly_in_random_direction', input = self.input})
+        if stateMachine.currentState and stateMachine.currentState.name == 'idle' then
+            stateMachine:goToState("girl_vamp_combo_first")
         end
     end
 }

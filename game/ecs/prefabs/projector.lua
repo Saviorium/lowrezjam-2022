@@ -12,7 +12,16 @@ return function(globalSystem, position, initialState)
         :addComponent('Animator', {animator = animatorInstance})
         :addComponent('DrawAnimation', {center = Vector(24, 2)})
         :addComponent('SyncAnimationToBeat')
+
         :addComponent('Controlled')
+        :addComponent('BeatControlled', {beatMap = {
+                                                    {listen = "beat1",send = "beat1"},
+                                                    {listen = "beat2",send = "beat2"},
+                                                    {listen = "beat3",send = "beat3"},
+                                                    {listen = "beat4",send = "beat4"},
+                                                   }
+                                        })
+
         :addComponent('RotateThisThing')
         :addComponent('Rotation')
         :addComponent('SinusRotation')

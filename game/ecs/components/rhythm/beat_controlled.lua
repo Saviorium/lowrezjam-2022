@@ -2,8 +2,7 @@ return {
     name = "BeatControlled",
     type = "InputSource",
 
-    beatTypeToListen = "beat1",
-    inputToSend = "jump",
+    beatMap = {listen = "beat1", send = "jump"},
 
     updateAndGetInputs = function(self, dt)
         -- do nothing, but control system resets inputs in Controlled

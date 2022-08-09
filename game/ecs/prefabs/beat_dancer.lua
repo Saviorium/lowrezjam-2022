@@ -16,7 +16,10 @@ return function(globalSystem, position)
         :addComponent('Animator', {animator = animatorInstance})
         :addComponent('PhysicsCollider', {collider = physicsCollider})
         :addComponent('DrawAnimation', {center = Vector(5, 7)})
-        :addComponent('BeatControlled', {beatTypeToListen = "beat1", inputToSend = "startMove"})
+        :addComponent('BeatControlled', {beatMap = {
+                                                    {listen = "beat1",send = "startMove"},
+                                                   }
+                                        })
 
         :addComponent('Controlled')
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
@@ -28,7 +31,6 @@ return function(globalSystem, position)
         :addComponent('Jumping', {maxSpeed = 10, jumpForce = 1000})
 
         :addComponent('StateMachine', {states = stateMachine()})
-        --:addComponent('MoveInRandomDirection')
         :addComponent('NormCombo')
 
         :addComponent('CameraToObjects')

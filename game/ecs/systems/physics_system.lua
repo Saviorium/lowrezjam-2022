@@ -19,9 +19,11 @@ function PhysicsSystem:handleUpdateEntityFunc(dt, entityId, entity)
 
         for shape, delta in pairs(self.globalSystem.HC:collisions(collider)) do
             if shape.type == 'Environment' then
-                pos.x = pos.x + delta.x
-                pos.y = pos.y + delta.y
-                vel = vel + Vector(delta.x, delta.y)*10
+                -- delta = Vector(delta.x, delta.y):normalized()
+                -- print(delta.x, delta.y)
+                -- pos.x = pos.x + delta.x
+                -- pos.y = pos.y + delta.y
+                vel = vel + Vector(delta.x, delta.y)
             end
         end
         entity:getComponentByName("Velocity").velocity = vel
