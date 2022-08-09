@@ -22,7 +22,7 @@ return function(globalSystem, position)
 
         :addComponent('Controlled')
         :addComponent('BeatControlled', {beatMap = {
-                                                    {listen = "beat1",send = "startMove"},
+                                                    {listen = "beat4",send = "startMove"},
                                                    }
                                         })
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})

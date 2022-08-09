@@ -71,7 +71,6 @@ function BeatSystem:sendInputToEntites(input)
         beatMapping.beatsFromLastInput = 0
         local controller = entity:getComponentByName("Controlled")
         for _, beatInput in pairs(beatMapping.beatMap) do
-            print(beatInput.listen, input[beatInput.listen], beatInput.send)
             if input[beatInput.listen] then
                 controller.inputSnapshot[beatInput.send] = 1
             end
