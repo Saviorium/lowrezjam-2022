@@ -17,9 +17,8 @@ return function(globalSystem, position)
         :addComponent('Falling')
         :addComponent('Friction', {airFriction = 3})
         :addComponent('Jumping', {maxSpeed = 200, jumpForce = 1000})
-
-        -- :addComponent('DrawRectangle', {size = Vector(width, height)})
         :addComponent('Animator', {animator = animatorInstance})
+        :addComponent('SyncAnimationToBeat')
         :addComponent('PhysicsCollider', {collider = physicsCollider})
         :addComponent('DrawAnimation', {center = Vector(10, 7)})
         

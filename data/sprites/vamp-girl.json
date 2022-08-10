@@ -1,23 +1,78 @@
 { "frames": [
    {
     "filename": "vamp-girl_0.aseprite",
-    "frame": { "x": 0, "y": 0, "w": 20, "h": 15 },
+    "frame": { "x": 0, "y": 0, "w": 20, "h": 17 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 13 },
-    "sourceSize": { "w": 18, "h": 13 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
+    "duration": 1000
+   },
+   {
+    "filename": "vamp-girl_1.aseprite",
+    "frame": { "x": 20, "y": 0, "w": 20, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
+    "duration": 1000
+   },
+   {
+    "filename": "vamp-girl_2.aseprite",
+    "frame": { "x": 40, "y": 0, "w": 20, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
     "duration": 100
+   },
+   {
+    "filename": "vamp-girl_3.aseprite",
+    "frame": { "x": 60, "y": 0, "w": 20, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
+    "duration": 30
+   },
+   {
+    "filename": "vamp-girl_4.aseprite",
+    "frame": { "x": 80, "y": 0, "w": 20, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
+    "duration": 30
+   },
+   {
+    "filename": "vamp-girl_5.aseprite",
+    "frame": { "x": 100, "y": 0, "w": 20, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
+    "duration": 500
+   },
+   {
+    "filename": "vamp-girl_6.aseprite",
+    "frame": { "x": 120, "y": 0, "w": 20, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 15 },
+    "sourceSize": { "w": 18, "h": 15 },
+    "duration": 9999
    }
  ],
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.2.30",
   "image": "vamp-girl.png",
-  "format": "RGBA8888",
-  "size": { "w": 20, "h": 15 },
+  "format": "I8",
+  "size": { "w": 140, "h": 17 },
   "scale": "1",
   "frameTags": [
-   { "name": "idle", "from": 0, "to": 0, "direction": "forward" }
+   { "name": "idle", "from": 0, "to": 1, "direction": "forward" },
+   { "name": "jump", "from": 2, "to": 6, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }

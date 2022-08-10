@@ -1,12 +1,57 @@
 { "frames": [
    {
     "filename": "bat-char_0.aseprite",
-    "frame": { "x": 0, "y": 0, "w": 15, "h": 7 },
+    "frame": { "x": 0, "y": 0, "w": 15, "h": 13 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 5 },
-    "sourceSize": { "w": 13, "h": 5 },
-    "duration": 100
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 11 },
+    "sourceSize": { "w": 13, "h": 11 },
+    "duration": 250
+   },
+   {
+    "filename": "bat-char_1.aseprite",
+    "frame": { "x": 15, "y": 0, "w": 15, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 11 },
+    "sourceSize": { "w": 13, "h": 11 },
+    "duration": 50
+   },
+   {
+    "filename": "bat-char_2.aseprite",
+    "frame": { "x": 30, "y": 0, "w": 15, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 11 },
+    "sourceSize": { "w": 13, "h": 11 },
+    "duration": 50
+   },
+   {
+    "filename": "bat-char_3.aseprite",
+    "frame": { "x": 45, "y": 0, "w": 15, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 11 },
+    "sourceSize": { "w": 13, "h": 11 },
+    "duration": 50
+   },
+   {
+    "filename": "bat-char_4.aseprite",
+    "frame": { "x": 60, "y": 0, "w": 15, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 11 },
+    "sourceSize": { "w": 13, "h": 11 },
+    "duration": 50
+   },
+   {
+    "filename": "bat-char_5.aseprite",
+    "frame": { "x": 45, "y": 0, "w": 15, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 11 },
+    "sourceSize": { "w": 13, "h": 11 },
+    "duration": 50
    }
  ],
  "meta": {
@@ -14,10 +59,10 @@
   "version": "1.2.30",
   "image": "bat-char.png",
   "format": "RGBA8888",
-  "size": { "w": 15, "h": 7 },
+  "size": { "w": 75, "h": 13 },
   "scale": "1",
   "frameTags": [
-   { "name": "idle", "from": 0, "to": 0, "direction": "forward" }
+   { "name": "idle", "from": 0, "to": 5, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }

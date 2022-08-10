@@ -23,7 +23,15 @@ function SmallVampCombo:onEnter(entity, params)
     self.input = params.input
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")
+    local animator = entity:getComponentByName("Animator").animator
+    animator:setVariable("state", "action")
 
+end
+
+
+function SmallVampCombo:onExit(entity, params)
+    local animator = entity:getComponentByName("Animator").animator
+    animator:setVariable("state", "idle")
 end
 
 function SmallVampCombo:update(entity, dt)

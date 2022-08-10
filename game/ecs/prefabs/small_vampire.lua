@@ -20,6 +20,7 @@ return function(globalSystem, position)
 
         -- :addComponent('DrawRectangle', {size = Vector(width, height)})
         :addComponent('Animator', {animator = animatorInstance})
+        :addComponent('SyncAnimationToBeat')
         :addComponent('PhysicsCollider', {collider = physicsCollider})
         :addComponent('DrawAnimation', {center = Vector(5, 5)})
 

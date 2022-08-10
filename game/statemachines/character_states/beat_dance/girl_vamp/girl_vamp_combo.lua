@@ -17,18 +17,20 @@ local GirlVampCombo = Class {
 }
 
 function GirlVampCombo:onEnter(entity, params)
-    -- local animator = entity:getComponentByName("Animator").animator
-    -- animator:setVariable("state", "dash_back_active")
+    local animator = entity:getComponentByName("Animator").animator
+    animator:setVariable("state", "jump")
     self.beat = 0
     self.direction = Vector(love.math.random(-1,1), -1)
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")
-    
+
     self.inputController.inputSnapshot.move.x = self.direction.x
     self.inputController.inputSnapshot.move.y = self.direction.y
 end
 
 function GirlVampCombo:onExit(entity)
+    local animator = entity:getComponentByName("Animator").animator
+    animator:setVariable("state", "idle")
 end
 
 function GirlVampCombo:update(entity, dt)

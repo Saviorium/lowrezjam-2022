@@ -18,6 +18,7 @@ return function(globalSystem, position)
 
         :addComponent('Animator', {animator = animatorInstance})
         :addComponent('DrawAnimation', {center = Vector(4, 7)})
+        :addComponent('SyncAnimationToBeat')
         :addComponent('PhysicsCollider', {collider = physicsCollider})
 
         :addComponent('Controlled')
