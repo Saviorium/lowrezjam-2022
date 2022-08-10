@@ -27,6 +27,7 @@ return function(globalSystem, position)
                                                     {listen = "beat2",send = "startMove"},
                                                    }
                                         })
+        :addComponent('UserControlled')
         :addComponent('Controlled')
 
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
@@ -35,6 +36,7 @@ return function(globalSystem, position)
         :addComponent('StateMachine', {states = stateMachine()})
         --:addComponent('MoveInRandomDirection')
         :addComponent('GirlCombo')
+        :addComponent('GoToCenter')
 
         :addComponent('PrintDebugMessage')
 

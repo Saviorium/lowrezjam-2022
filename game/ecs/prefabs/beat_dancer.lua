@@ -22,16 +22,18 @@ return function(globalSystem, position)
                                         })
 
         :addComponent('Controlled')
+        :addComponent('UserControlled')
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
         :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100})
 
-        :addComponent('Walking', {maxSpeed = config.speed.slow})
+        :addComponent('Walking', {maxSpeed = config.speed.fast})
         :addComponent('Falling')
         :addComponent('Friction')
         :addComponent('Jumping', {maxSpeed = 10, jumpForce = 1000})
 
         :addComponent('StateMachine', {states = stateMachine()})
         :addComponent('NormCombo')
+        :addComponent('GoToCenter')
 
         :addComponent('CameraToObjects')
         :addComponent('PrintDebugMessage')

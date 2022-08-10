@@ -8,6 +8,7 @@ return {
             attack1 = 0,
             jump = 0,
             startMove = 0,
+            hide = 0,
         }
     end,
 

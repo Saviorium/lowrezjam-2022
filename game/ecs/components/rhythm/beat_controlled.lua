@@ -5,6 +5,13 @@ return {
     beatMap = {listen = "beat1", send = "jump"},
 
     updateAndGetInputs = function(self, dt)
-        -- do nothing, but control system resets inputs in Controlled
+
+        return {
+            move = Vector(0, 0),
+            attack1 = 0,
+            jump = 0,
+            startMove = 0,
+            hide = 0,
+        }
     end,
 }

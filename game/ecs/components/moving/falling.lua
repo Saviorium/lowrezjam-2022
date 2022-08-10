@@ -1,7 +1,7 @@
 return {
     name = "Falling", -- subjected to gravity
     type = "MovingManager",
-    g = 10,
+    g = 1,
     isGrounded = false,
     bouncing = 0,
     minBounceSpeed = 1,
@@ -20,6 +20,7 @@ return {
                 collisionWithEnv = true
             end
         end
+                velocity.y = velocity.y + self.g
 
             if collisionWithEnv then
                 -- if self.bouncing and self.bouncing > 0 and math.abs(velocity.y) > self.minBounceSpeed then
@@ -31,10 +32,10 @@ return {
                 -- end
                 velocity.y = 0
                 self.isGrounded = true
-            elseif not (self.isGrounded) then
-                velocity.y = velocity.y + self.g
-            elseif velocity.y < 0 then
-                self.isGrounded = false
+            -- elseif not (self.isGrounded) then
+            --     velocity.y = velocity.y + self.g
+            -- elseif velocity.y < 0 then
+            --     self.isGrounded = false
             end
         end
         prof.pop()

@@ -31,8 +31,24 @@ function SmallVampCombo:update(entity, dt)
     local stateMachine = entity:getComponentByName("StateMachine")
     
     if self.inputController.inputSnapshot[self.input] == 1 and self:checkIfInputNearBeat(self.beatsFromLastInput, self.beatsToNextDanceMove) then
+
+        local houseFloorLevel = config.positions.houseFloorLevel
+        local houseWidth = config.positions.houseWidth
+
+        local yardLevel = config.positions.yardLevel
+        local yardWidth = config.positions.yardWidth
+        
+        local unitHeight = 12
+        local unistLevel = houseFloorLevel - unitHeight
+
         local position = entity:getComponentByName("Position")
-        position.position.x = math.clamp(-config.worldSize.x, position.position.x + love.math.random(-1,1) * config.teleportDistance, config.worldSize.x)
+        position.position.x = math.clamp(-config.worldSize.x + 2, position.position.x + love.math.random(-1,1) * config.teleportDistance, config.worldSize.x - 2)
+
+        if position.position.x > yardWidth - 5 and position.position.x < houseWidth + yardWidth + 5 then
+            position.position.y = unistLevel
+        else
+            position.position.y = yardLevel - unitHeight
+        end
 
         stateMachine:goToState(self.nextDanceMove, {input = self.input})
     end 

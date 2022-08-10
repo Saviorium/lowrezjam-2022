@@ -21,6 +21,7 @@ return function(globalSystem, position)
         :addComponent('PhysicsCollider', {collider = physicsCollider})
 
         :addComponent('Controlled')
+        :addComponent('UserControlled')
         :addComponent('BeatControlled', {beatMap = {
                                                     {listen = "beat4",send = "startMove"},
                                                    }
@@ -31,10 +32,11 @@ return function(globalSystem, position)
         :addComponent('StateMachine', {states = stateMachine()})
         -- :addComponent('FlyInRandomDirection', {input="startMove"})
         :addComponent('BatCombo')
+        :addComponent('GoToCenter')
 
-        :addComponent('ActionToBeat')
-        :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
-        :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100, input="jump"})
+        -- :addComponent('ActionToBeat')
+        -- :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
+        -- :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100, input="jump"})
 
     return ent
 end

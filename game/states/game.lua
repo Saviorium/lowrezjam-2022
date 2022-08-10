@@ -7,19 +7,19 @@ local state = {}
 function state:enter(prev_state, args)
     self.world = GlobalSystem()
     --local testObject = require "game.ecs.prefabs.test_object" (self.world)
-    local houseFloorLevel = 192
-    local houseWidth = 116
+    local houseFloorLevel = config.positions.houseFloorLevel
+    local houseWidth = config.positions.houseWidth
 
-    local yardLevel = 210
-    local yardWidth = (config.worldSize.x - houseWidth)/2
+    local yardLevel = config.positions.yardLevel
+    local yardWidth = config.positions.yardWidth
 
-    local rampLevel = houseFloorLevel + (yardLevel - houseFloorLevel)/2 - 1
-    local rampWidth = yardWidth/2 + 8
+    local rampLevel = config.positions.rampLevel
+    local rampWidth = config.positions.rampWidth
 
-    local floorThikness = 16
-    local outerWallwidth, outerWallHeight = 4, 64
-    local innerWallLevel = houseFloorLevel - 20
-    local innerWallwidth, innerWallHeight = 4, 64
+    local floorThikness = config.positions.floorThikness
+    local outerWallwidth, outerWallHeight = config.positions.outerWallwidth, config.positions.outerWallHeight
+    local innerWallLevel = config.positions.innerWallLevel
+    local innerWallwidth, innerWallHeight = config.positions.innerWallwidth, config.positions.innerWallHeight
 
     local houseFloor     = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth, houseFloorLevel), houseWidth, floorThikness)
 
@@ -32,9 +32,11 @@ function state:enter(prev_state, args)
     local leftOuterWall  = require "game.ecs.prefabs.wall" (self.world, Vector(-outerWallwidth, houseFloorLevel-outerWallHeight), outerWallwidth, outerWallHeight)
     local rightOuterWall = require "game.ecs.prefabs.wall" (self.world, Vector(config.worldSize.x, houseFloorLevel-outerWallHeight), outerWallwidth, outerWallHeight)
     
-    local leftInnerWall  = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
-    local rightInnerWall = require "game.ecs.prefabs.wall" (self.world, Vector(houseWidth + yardWidth-5, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
-    local roof           = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight+2), houseWidth, innerWallwidth)
+    -- local leftInnerWall  = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
+    -- local rightInnerWall = require "game.ecs.prefabs.wall" (self.world, Vector(houseWidth + yardWidth-5, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
+    -- local roof           = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight+2), houseWidth, innerWallwidth)
+    
+    require "game.ecs.prefabs.sun" (self.world)
     
     local ball = require "game.ecs.prefabs.disco_ball" (self.world)
     local danceFloor = require "game.ecs.prefabs.dance_floor" (self.world)
@@ -57,8 +59,24 @@ function state:enter(prev_state, args)
     require "game.ecs.prefabs.beat_dancer" (self.world, Vector(140, unistLevel))
     require "game.ecs.prefabs.beat_dancer" (self.world, Vector(135, unistLevel))
 
-    local bat = require "game.ecs.prefabs.bat" (self.world, Vector(unistLevel, 130))
+    local bat = require "game.ecs.prefabs.bat" (self.world, Vector(110, 130))
+    require "game.ecs.prefabs.bat" (self.world, Vector(100, 130))
+    require "game.ecs.prefabs.bat" (self.world, Vector(120, 130))
+    require "game.ecs.prefabs.bat" (self.world, Vector(130, 130))
+    require "game.ecs.prefabs.bat" (self.world, Vector(140, 130))
+
     local smallVampire = require "game.ecs.prefabs.small_vampire" (self.world, Vector(140, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(130, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(120, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(110, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(100, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(90, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(80, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(70, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(60, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(50, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(190, unistLevel))
+    require "game.ecs.prefabs.small_vampire" (self.world, Vector(200, unistLevel))
     local girlVampire = require "game.ecs.prefabs.girl_vampire" (self.world, Vector(120, unistLevel))
     -- local bat = require "game.ecs.prefabs.bat" (self.world)
 
@@ -71,6 +89,8 @@ function state:enter(prev_state, args)
     :addComponent('ChangeColorSecond', {color = config.colors.purple, input = 'beat4'})
 
     :setVariable("Rotation", "rotation", -45)
+
+
     print("press M to play music")
 end
 

@@ -52,6 +52,28 @@ config = {
         average = 12,
         fast = 16
     },
+    positions = {
+        houseFloorLevel = 192,
+        houseWidth = 116,
+
+        yardLevel = 210,
+        yardWidth = (256 - 116)/2, -- (config.worldSize.x - houseWidth)/2
+
+        rampLevel = 192 + (210 - 192)/2 - 1, -- houseFloorLevel + (yardLevel - houseFloorLevel)/2 - 1
+        rampWidth = ((256 - 116)/2) /2 + 8, -- ardWidth/2 + 8
+
+        floorThikness = 16,
+        outerWallwidth = 4,
+        outerWallHeight = 64,
+
+        innerWallLevel = 192-20, -- houseFloorLevel - 20
+
+        innerWallwidth = 4,
+        innerWallHeight = 64,
+    },
+    sun = {
+        speed = 10
+    },
     teleportDistance = 16
 }
 
@@ -59,6 +81,6 @@ Debug = {
     showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
-    drawCollidersDebug = false,
+    drawCollidersDebug = true,
     BeatLogger = 2,
 }
