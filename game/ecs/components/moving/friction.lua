@@ -17,6 +17,7 @@ return {
         end
 
         local friction
+        print(grounded)
         if grounded then
             friction = self.groundFriction*dt
         else
@@ -26,7 +27,7 @@ return {
         velocity.x = math.abs(velocity.x) - friction > 0 and velocity.x - directionX * friction or 0
 
         velocity.x = math.clamp(-self.maxSpeed, velocity.x, self.maxSpeed)
-        velocity.y = math.clamp(-self.maxSpeed, velocity.y, self.maxSpeed)
+        -- velocity.y = math.clamp(-self.maxSpeed, velocity.y, self.maxSpeed)
 
         entity:getComponentByName("Velocity").velocity = velocity
 

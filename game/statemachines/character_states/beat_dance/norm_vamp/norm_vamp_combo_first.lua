@@ -10,8 +10,8 @@ local SmallVampCombo = Class {
         self.timeoutInBeats = 5
         self.nextState = "idle"
 
-        self.beatsToNextDanceMove = 1
-        self.nextDanceMove = 'norm_vamp_combo_second'
+        self.beatsToNextDanceMove = 2
+        self.nextDanceMove = 'norm_vamp_combo_third'
 
         self.inputController = nil
         self.beatsFromLastInput = 0
@@ -25,6 +25,8 @@ function SmallVampCombo:onEnter(entity, params)
     self.beatControlled = entity:getComponentByName("BeatControlled")
     local animator = entity:getComponentByName("Animator").animator
     animator:setVariable("state", "action")
+    self.scoreCounter = entity:getComponentByName("ScoreCounter")
+    self.scoreCounter:addNextScore(entity)
 
 end
 
@@ -58,7 +60,10 @@ function SmallVampCombo:update(entity, dt)
             position.position.y = yardLevel - unitHeight
         end
 
+        self.scoreCounter:addNextScore(entity)
         stateMachine:goToState(self.nextDanceMove, {input = self.input})
+    elseif self.inputController.inputSnapshot[self.input] == 1 then
+        self.scoreCounter:dropScoreMultiplyer()
     end 
 
     if self.beat > self.timeoutInBeats then

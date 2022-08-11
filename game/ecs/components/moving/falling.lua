@@ -5,6 +5,7 @@ return {
     isGrounded = false,
     bouncing = 0,
     minBounceSpeed = 1,
+    maxFallingSpeed = 15,
 
     update = function (self, dt, entity)
         prof.push("Jumping for = "..entity.id)
@@ -20,7 +21,7 @@ return {
                 collisionWithEnv = true
             end
         end
-                velocity.y = velocity.y + self.g
+            velocity.y = math.min(velocity.y + self.g, self.maxFallingSpeed)
 
             if collisionWithEnv then
                 -- if self.bouncing and self.bouncing > 0 and math.abs(velocity.y) > self.minBounceSpeed then

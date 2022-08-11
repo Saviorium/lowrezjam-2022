@@ -86,13 +86,8 @@ function state:enter(prev_state, args)
     -- local bat = require "game.ecs.prefabs.bat" (self.world)
 
     local projector1 = require "game.ecs.prefabs.projector" (self.world, Vector(73, 107))
-    :addComponent('ChangeColorFirst', {color = config.colors.red, input = 'beat1'})
-    :addComponent('ChangeColorSecond', {color = config.colors.blue, input = 'beat2'})
     :setVariable("Rotation", "rotation", 180+45)
-    local projector1 = require "game.ecs.prefabs.projector" (self.world, Vector(179, 107), "dancing-reverse")
-    :addComponent('ChangeColorFirst', {color = config.colors.green, input = 'beat3'})
-    :addComponent('ChangeColorSecond', {color = config.colors.purple, input = 'beat4'})
-
+    local projector2 = require "game.ecs.prefabs.projector" (self.world, Vector(179, 107), "dancing-reverse")
     :setVariable("Rotation", "rotation", -45)
 
 

@@ -9,6 +9,10 @@ return {
             jump = 0,
             startMove = 0,
             hide = 0,
+            beat1 = 0,
+            beat2 = 0,
+            beat3 = 0,
+            beat4 = 0,
         }
     end,
 

@@ -35,9 +35,7 @@ return function(globalSystem, position)
         :addComponent('BatCombo')
         :addComponent('GoToCenter')
 
-        -- :addComponent('ActionToBeat')
-        -- :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
-        -- :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100, input="jump"})
+        :addComponent('ScoreCounter')
 
     return ent
 end

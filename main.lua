@@ -19,11 +19,13 @@ SoundManager = require "engine.sound.sound_manager" (SoundData)
 local MusicData = require "data.music.music_data"
 MusicPlayer = require "engine.sound.music_player" (MusicData)
 
+fonts = require "data.fonts.fonts"
 states = {
     game = require "game.states.game",
+    tutorial = require "game.states.tutorial",
+    final = require "game.states.final",
 }
 
-fonts = require "data.fonts.fonts"
 
 local pixelCanvas = require "engine.render.global_pixel_canvas" (
     Vector(config.render.screenSize.x, config.render.screenSize.y),
@@ -43,7 +45,7 @@ end
 function love.load()
 
     PersistantStorage:load()
-    StateManager.switch(states.game)
+    StateManager.switch(states.tutorial)
 end
 
 function love.draw()

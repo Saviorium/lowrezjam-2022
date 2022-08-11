@@ -19,6 +19,10 @@ return function(globalSystem, position, initialState)
                                                     {listen = "beat2",send = "beat2"},
                                                     {listen = "beat3",send = "beat3"},
                                                     {listen = "beat4",send = "beat4"},
+                                                    {listen = "beat1",send = "startMove"},
+                                                    {listen = "beat2",send = "startMove"},
+                                                    {listen = "beat3",send = "startMove"},
+                                                    {listen = "beat4",send = "startMove"},
                                                    }
                                         })
 
@@ -26,6 +30,7 @@ return function(globalSystem, position, initialState)
         :addComponent('Rotation')
         :addComponent('SinusRotation')
         :addComponent('Colored', {color = config.colors.red})
+        :addComponent('ChangeColor')
 
     return ent
 end

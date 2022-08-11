@@ -19,7 +19,8 @@ function BatCombo:onEnter(entity, params)
     self.input = params.input
 
     self.inputController = entity:getComponentByName('Controlled')
-    self.beatControlled = entity:getComponentByName("BeatControlled")
+    self.beatControlled  = entity:getComponentByName("BeatControlled")
+
 end
 
 function BatCombo:update(entity, dt)

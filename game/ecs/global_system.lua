@@ -14,8 +14,9 @@ local StatesSystem          = require "game.ecs.systems.state_system"
 local BeatSystem            = require "game.ecs.systems.beat_system"
 local BeatSyncSystem        = require "game.ecs.systems.beat_sync_system"
 local ParticleSystem        = require "game.ecs.systems.particle_system"
-local RotateSystem        = require "game.ecs.systems.rotate_system"
-
+local RotateSystem          = require "game.ecs.systems.rotate_system"
+local ScoreSystem           = require "game.ecs.systems.score_system"
+local TriggerSystem         = require "game.ecs.systems.trigger_system"
 
 
 local EventManager = require "engine.events.event_manager"
@@ -35,6 +36,7 @@ local GlobalSystem = Class {
         self._systems = { -- order is important
 
             ControlSystem(self),
+            ScoreSystem(self),
             RotateSystem(self),
             BeatSystem(self),
             StatesSystem(self),
@@ -47,6 +49,7 @@ local GlobalSystem = Class {
             DrawSystem(self),
             ParticleSystem(self),
             SoundSystem(self),
+            TriggerSystem(self),
         }
     end
 }

@@ -26,6 +26,11 @@ function GirlVampCombo:onEnter(entity, params)
 
     self.inputController.inputSnapshot.move.x = self.direction.x
     self.inputController.inputSnapshot.move.y = self.direction.y
+
+    entity:getComponentByName('Falling').isGrounded = false
+
+    self.scoreCounter = entity:getComponentByName("ScoreCounter")
+    self.scoreCounter:addNextScore(entity)
 end
 
 function GirlVampCombo:onExit(entity)

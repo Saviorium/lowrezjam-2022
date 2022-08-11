@@ -14,9 +14,10 @@ return function(globalSystem, position)
         :addComponent('Velocity', {velocity = Vector(0,0)})
 
         :addComponent('Walking', {maxSpeed = config.speed.average})
-        :addComponent('Falling')
-        :addComponent('Friction', {airFriction = 3})
-        :addComponent('Jumping', {maxSpeed = 200, jumpForce = 1000})
+        :addComponent('Falling', {maxFallingSpeed = 5})
+        :addComponent('Friction', {airFriction = 1})
+        :addComponent('Jumping', {maxSpeed = 50, jumpForce = 1000})
+
         :addComponent('Animator', {animator = animatorInstance})
         :addComponent('SyncAnimationToBeat')
         :addComponent('PhysicsCollider', {collider = physicsCollider})
@@ -38,6 +39,7 @@ return function(globalSystem, position)
         :addComponent('GoToCenter')
 
         :addComponent('PrintDebugMessage')
+        :addComponent('ScoreCounter')
 
     return ent
 end

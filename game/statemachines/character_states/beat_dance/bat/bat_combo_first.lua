@@ -23,6 +23,8 @@ function BatCombo:onEnter(entity, params)
 
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled = entity:getComponentByName("BeatControlled")
+    self.scoreCounter = entity:getComponentByName("ScoreCounter")
+    self.scoreCounter:addNextScore(entity)
 end
 
 function BatCombo:update(entity, dt)
@@ -30,7 +32,10 @@ function BatCombo:update(entity, dt)
     local stateMachine = entity:getComponentByName("StateMachine")
 
     if self.inputController.inputSnapshot[self.input] == 1 and self:checkIfInputNearBeat(self.beatsFromLastInput , self.beatsToNextDanceMove) then
+        self.scoreCounter:addNextScore(entity)
         stateMachine:goToState(self.nextDanceMove, {input = self.input})
+    elseif self.inputController.inputSnapshot[self.input] == 1 then
+        self.scoreCounter:dropScoreMultiplyer()    
     end 
 
     if self.beat > self.timeoutInBeats then

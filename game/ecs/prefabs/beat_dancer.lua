@@ -38,6 +38,7 @@ return function(globalSystem, position)
         :addComponent('CameraToObjects')
         :addComponent('PrintDebugMessage')
         :addComponent('SyncAnimationToBeat')
+        :addComponent('ScoreCounter')
 
     return ent
 end
