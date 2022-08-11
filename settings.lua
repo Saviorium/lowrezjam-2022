@@ -81,6 +81,6 @@ Debug = {
     showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
-    drawCollidersDebug = true,
+    drawCollidersDebug = false,
     BeatLogger = 2,
 }

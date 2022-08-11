@@ -2,6 +2,8 @@ local GlobalSystem = require "game.ecs.global_system"
 
 local beatLogger = require "engine.utils.logger" ('RhythmPrint')
 
+local Door = require "game.ecs.prefabs.door"
+
 local state = {}
 
 function state:enter(prev_state, args)
@@ -28,16 +30,19 @@ function state:enter(prev_state, args)
 
     local leftRamp  = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth/2, rampLevel), rampWidth, floorThikness, -math.pi/7)
     local rightRamp = require "game.ecs.prefabs.wall" (self.world, Vector(houseWidth + yardWidth - 9, rampLevel), rampWidth, floorThikness, math.pi/7)
-    
+
     local leftOuterWall  = require "game.ecs.prefabs.wall" (self.world, Vector(-outerWallwidth, houseFloorLevel-outerWallHeight), outerWallwidth, outerWallHeight)
     local rightOuterWall = require "game.ecs.prefabs.wall" (self.world, Vector(config.worldSize.x, houseFloorLevel-outerWallHeight), outerWallwidth, outerWallHeight)
-    
+
+    local doorLeft = Door(self.world, Vector(56, 190-32)):addComponent("Flipped", {flipped = true})
+    local doorRight = Door(self.world, Vector(184, 190-32))
+
     -- local leftInnerWall  = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
     -- local rightInnerWall = require "game.ecs.prefabs.wall" (self.world, Vector(houseWidth + yardWidth-5, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
     -- local roof           = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight+2), houseWidth, innerWallwidth)
-    
+
     require "game.ecs.prefabs.sun" (self.world)
-    
+
     local ball = require "game.ecs.prefabs.disco_ball" (self.world)
     local danceFloor = require "game.ecs.prefabs.dance_floor" (self.world)
     local dj = require "game.ecs.prefabs.dj_character" (self.world)
