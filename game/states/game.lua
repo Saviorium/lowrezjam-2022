@@ -120,6 +120,12 @@ function state:keypressed(key)
     if key == "r" then
         MusicPlayer:play("night1Chill", "forth-bar")
     end
+    if key == "t" then
+        StateManager.switch(states.final, {
+                playerScore = self.world.systems.ScoreSystem.overallScore
+            })
+    end
+            
 end
 
 function state:draw()

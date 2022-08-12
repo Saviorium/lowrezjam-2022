@@ -49,25 +49,25 @@ config = {
         rhythmCompleteMiss = 0.4,
     },
     speed = {
-        slow = 8,
-        average = 12,
-        fast = 16
+        slow = 10,
+        average = 20,
+        fast = 30
     },
     positions = {
-        houseFloorLevel = 192,
-        houseWidth = 116,
+        houseFloorLevel = 190,
+        houseWidth = 105,
 
         yardLevel = 210,
-        yardWidth = (256 - 116)/2, -- (config.worldSize.x - houseWidth)/2
+        yardWidth = (256 - 105)/2, -- (config.worldSize.x - houseWidth)/2
 
-        rampLevel = 192 + (210 - 192)/2 - 1, -- houseFloorLevel + (yardLevel - houseFloorLevel)/2 - 1
-        rampWidth = ((256 - 116)/2) /2 + 8, -- ardWidth/2 + 8
+        rampLevel = 190 + (210 - 190)/2 - 1, -- houseFloorLevel + (yardLevel - houseFloorLevel)/2 - 1
+        rampWidth = ((256 - 105)/2) /2 + 8, -- ardWidth/2 + 8
 
         floorThikness = 16,
         outerWallwidth = 4,
         outerWallHeight = 64,
 
-        innerWallLevel = 192-20, -- houseFloorLevel - 20
+        innerWallLevel = 190-20, -- houseFloorLevel - 20
 
         innerWallwidth = 4,
         innerWallHeight = 64,
@@ -82,6 +82,6 @@ Debug = {
     showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
-    drawCollidersDebug = false,
+    drawCollidersDebug = true,
     BeatLogger = 2,
 }

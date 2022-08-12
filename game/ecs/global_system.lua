@@ -32,11 +32,12 @@ local GlobalSystem = Class {
         self.newEntityId = 1
         self.eventManager = EventManager()
         self.systems = { -- take system here if you need a quick dirty fix
+            ScoreSystem = ScoreSystem(self),
         }
         self._systems = { -- order is important
 
             ControlSystem(self),
-            ScoreSystem(self),
+            self.systems.ScoreSystem,
             RotateSystem(self),
             BeatSystem(self),
             StatesSystem(self),

@@ -16,7 +16,7 @@ return function(globalSystem, position)
         :addComponent('Walking', {maxSpeed = config.speed.fast})
         :addComponent('Falling')
         :addComponent('Friction')
-        :addComponent('Jumping', {maxSpeed = 10, jumpForce = 1000})
+        :addComponent('Jumping', {maxSpeed = 15, jumpForce = 1000})
 
         -- :addComponent('DrawRectangle', {size = Vector(width, height)})
         :addComponent('Animator', {animator = animatorInstance})

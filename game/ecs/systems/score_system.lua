@@ -10,7 +10,12 @@ local ScoreSystem = Class {
 }
 
 function ScoreSystem:handleUpdateEntityFunc(dt, entityId, entity)
+
     local score = entity:getComponentByName("ScoreCounter")
+
+    if entity:getComponentByName("BeatControlled").offBeatHappened then
+        score:dropScoreMultiplyer()
+    end
     -- score:update(dt)
     self.overallScore = self.overallScore + score.score
 end

@@ -88,6 +88,9 @@ end
 
 function BeatSystem:handleOffBeat()
     self.streak = 0
+    for _, entity in pairs(self.pool) do
+        entity:getComponentByName("BeatControlled").offBeatHappened = true
+    end
     self.offBeatHappened = true
 end
 
