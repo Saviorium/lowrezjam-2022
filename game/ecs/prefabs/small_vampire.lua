@@ -25,7 +25,7 @@ return function(globalSystem, position)
         :addComponent('DrawAnimation', {center = Vector(5, 5)})
 
         :addComponent('BeatControlled', {beatMap = {
-                                                    {listen = "beat3",send = "startMove"},
+                                                    {listen = "beat2",send = "startMove"},
                                                    }
                                         })
         :addComponent('UserControlled')

@@ -1,0 +1,170 @@
+{ "frames": [
+   {
+    "filename": "tutorial-zxcv_0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 200
+   },
+   {
+    "filename": "tutorial-zxcv_1.aseprite",
+    "frame": { "x": 0, "y": 14, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_2.aseprite",
+    "frame": { "x": 0, "y": 28, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 500
+   },
+   {
+    "filename": "tutorial-zxcv_3.aseprite",
+    "frame": { "x": 0, "y": 42, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_4.aseprite",
+    "frame": { "x": 0, "y": 56, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 200
+   },
+   {
+    "filename": "tutorial-zxcv_5.aseprite",
+    "frame": { "x": 0, "y": 70, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_6.aseprite",
+    "frame": { "x": 0, "y": 28, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 500
+   },
+   {
+    "filename": "tutorial-zxcv_7.aseprite",
+    "frame": { "x": 0, "y": 84, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_8.aseprite",
+    "frame": { "x": 0, "y": 98, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 200
+   },
+   {
+    "filename": "tutorial-zxcv_9.aseprite",
+    "frame": { "x": 0, "y": 112, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_10.aseprite",
+    "frame": { "x": 0, "y": 28, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 500
+   },
+   {
+    "filename": "tutorial-zxcv_11.aseprite",
+    "frame": { "x": 0, "y": 126, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_12.aseprite",
+    "frame": { "x": 0, "y": 140, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 200
+   },
+   {
+    "filename": "tutorial-zxcv_13.aseprite",
+    "frame": { "x": 0, "y": 154, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   },
+   {
+    "filename": "tutorial-zxcv_14.aseprite",
+    "frame": { "x": 0, "y": 28, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 500
+   },
+   {
+    "filename": "tutorial-zxcv_15.aseprite",
+    "frame": { "x": 0, "y": 168, "w": 58, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 12 },
+    "sourceSize": { "w": 56, "h": 12 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.30",
+  "image": "tutorial-zxcv.png",
+  "format": "I8",
+  "size": { "w": 58, "h": 182 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "dancing", "from": 0, "to": 15, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 2", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 2 Copy", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 4", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 5", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 3", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 6", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 7", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 8", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

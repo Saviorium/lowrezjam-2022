@@ -95,7 +95,10 @@ function state:enter(prev_state, args)
     :setVariable("Rotation", "rotation", -45)
 
 
-    print("press M to play music")
+    local tutorialZxcv = require "game.ecs.prefabs.tutorial_zxcv" (self.world)
+    print("press QWERM to switch music")
+
+    MusicPlayer:play("night1", "forth-bar")
 end
 
 function state:mousepressed(x, y)

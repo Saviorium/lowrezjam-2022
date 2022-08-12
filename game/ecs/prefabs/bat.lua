@@ -24,7 +24,7 @@ return function(globalSystem, position)
         :addComponent('Controlled')
         :addComponent('UserControlled')
         :addComponent('BeatControlled', {beatMap = {
-                                                    {listen = "beat4",send = "startMove"},
+                                                    {listen = "beat3",send = "startMove"},
                                                    }
                                         })
         :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})

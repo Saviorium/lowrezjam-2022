@@ -118,8 +118,10 @@ function AnimatorInstance:play(tag)
 end
 
 function AnimatorInstance:restart()
-    self.animation:stop()
-    self.animation:play()
+    if not self.animation.paused then
+        self.animation:stop()
+        self.animation:play()
+    end
 end
 
 function AnimatorInstance:setSpeed(speed)

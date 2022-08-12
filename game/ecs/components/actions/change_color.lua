@@ -13,17 +13,17 @@ return { -- abstract action
     onActive = function(self)
 
         local inputController = self.entity:getComponentByName('Controlled')
-        
+
         local colored = self.entity:getComponentByName("Colored")
 
         if inputController.inputSnapshot.beat1 == 1 then
-            colored.color = config.colors.blue 
+            colored.color = config.colors.blue
         elseif inputController.inputSnapshot.beat2 == 1 then
-            colored.color = config.colors.purple 
+            colored.color = config.colors.green
         elseif inputController.inputSnapshot.beat3 == 1 then
-            colored.color = config.colors.green 
+            colored.color = config.colors.red
         elseif inputController.inputSnapshot.beat4 == 1 then
-            colored.color = config.colors.red 
+            colored.color = config.colors.purple
         end
     end
 }

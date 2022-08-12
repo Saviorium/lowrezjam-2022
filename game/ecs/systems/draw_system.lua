@@ -45,13 +45,13 @@ function DrawSystem:draw()
             local absolute = entity:getComponentByName("DrawOnOrigin")
             if absolute then
                 love.graphics.origin()
-                love.graphics.translate(love.graphics.getWidth()/2, love.graphics.getHeight()/2)
+                --love.graphics.translate(love.graphics.getWidth()/2, love.graphics.getHeight()/2)
                 local animatior = entity:getComponentByName("Animator") -- hack: this would look better in a dedicated system, that would handle fullscreen overlays
                 if animatior and animatior.animator and animatior.animator.animation then
                     local scaleX = love.graphics.getWidth()/animatior.animator.animation:getWidth()
                     local scaleY = love.graphics.getHeight()/animatior.animator.animation:getHeight()
                     local scale = math.max(scaleX, scaleY)
-                    love.graphics.scale(scale, scale)
+                    --love.graphics.scale(scale, scale)
                 end
             end
 
