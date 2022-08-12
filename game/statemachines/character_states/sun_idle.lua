@@ -8,7 +8,7 @@ local SunIdle = Class {
         self.nextState = "sun_rise"
         self.timeout = 0.3
 
-        self.timerToLeave = 1
+        self.timerToLeave = 10
 
     end
 }

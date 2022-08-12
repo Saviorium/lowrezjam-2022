@@ -4,6 +4,7 @@ local beatLogger = require "engine.utils.logger" ('RhythmPrint')
 
 local Door = require "game.ecs.prefabs.door"
 local Candle = require "game.ecs.prefabs.candle"
+local Tutorial = require "game.ecs.prefabs.tutorial_animated"
 
 local state = {}
 
@@ -95,7 +96,7 @@ function state:enter(prev_state, args)
     :setVariable("Rotation", "rotation", -45)
 
 
-    local tutorialZxcv = require "game.ecs.prefabs.tutorial_zxcv" (self.world)
+    local tutorialZxcv = Tutorial(self.world, "tutorial-zxcv", Vector(4, 26))
     print("press QWERM to switch music")
 
     MusicPlayer:play("night1", "forth-bar")
