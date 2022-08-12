@@ -1,0 +1,55 @@
+{ "frames": [
+   {
+    "filename": "bg-candle_0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 11, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 9, "h": 10 },
+    "sourceSize": { "w": 9, "h": 10 },
+    "duration": 50
+   },
+   {
+    "filename": "bg-candle_1.aseprite",
+    "frame": { "x": 11, "y": 0, "w": 11, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 9, "h": 10 },
+    "sourceSize": { "w": 9, "h": 10 },
+    "duration": 950
+   },
+   {
+    "filename": "bg-candle_2.aseprite",
+    "frame": { "x": 22, "y": 0, "w": 11, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 9, "h": 10 },
+    "sourceSize": { "w": 9, "h": 10 },
+    "duration": 50
+   },
+   {
+    "filename": "bg-candle_3.aseprite",
+    "frame": { "x": 33, "y": 0, "w": 11, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 9, "h": 10 },
+    "sourceSize": { "w": 9, "h": 10 },
+    "duration": 950
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.30",
+  "image": "bg-candle.png",
+  "format": "RGBA8888",
+  "size": { "w": 44, "h": 12 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "dancing", "from": 0, "to": 3, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

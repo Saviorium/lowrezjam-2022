@@ -3,6 +3,7 @@ local GlobalSystem = require "game.ecs.global_system"
 local beatLogger = require "engine.utils.logger" ('RhythmPrint')
 
 local Door = require "game.ecs.prefabs.door"
+local Candle = require "game.ecs.prefabs.candle"
 
 local state = {}
 
@@ -36,6 +37,8 @@ function state:enter(prev_state, args)
 
     local doorLeft = Door(self.world, Vector(56, 190-32)):addComponent("Flipped", {flipped = true})
     local doorRight = Door(self.world, Vector(184, 190-32))
+    local candleLeft = Candle(self.world, Vector(108, 176-32))
+    local candleRight = Candle(self.world, Vector(142, 176-32))
 
     -- local leftInnerWall  = require "game.ecs.prefabs.wall" (self.world, Vector(yardWidth-2, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
     -- local rightInnerWall = require "game.ecs.prefabs.wall" (self.world, Vector(houseWidth + yardWidth-5, innerWallLevel - innerWallHeight), innerWallwidth, innerWallHeight)
@@ -48,6 +51,7 @@ function state:enter(prev_state, args)
     local dj = require "game.ecs.prefabs.dj_character" (self.world)
     local djBooth = require "game.ecs.prefabs.dj_booth" (self.world)
     local bg = require "game.ecs.prefabs.background" (self.world)
+    local sky = require "game.ecs.prefabs.background_sky" (self.world)
 
     local unitHeight = 12
     local unistLevel = houseFloorLevel - unitHeight

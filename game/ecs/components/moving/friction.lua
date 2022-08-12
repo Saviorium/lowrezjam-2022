@@ -17,7 +17,7 @@ return {
         end
 
         local friction
-        print(grounded)
+
         if grounded then
             friction = self.groundFriction*dt
         else

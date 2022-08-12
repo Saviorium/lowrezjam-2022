@@ -27,13 +27,14 @@ config = {
     },
     draw = {
         layers = { -- must be consecutive
-            bg = 1,
-            bgFront = 2,
-            common = 3,
-            characterBack = 4,
-            characterFront = 5,
-            bullets = 6,
-            ui = 7,
+            bgFar = 1,
+            bg = 2,
+            bgFront = 3,
+            common = 4,
+            characterBack = 5,
+            characterFront = 6,
+            bullets = 7,
+            ui = 8,
         },
     },
     render = {
