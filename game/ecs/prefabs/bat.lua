@@ -36,6 +36,7 @@ return function(globalSystem, position)
         :addComponent('GoToCenter')
 
         :addComponent('ScoreCounter')
+        :addComponent('OnSunriseDieOutdoors')
 
     return ent
 end

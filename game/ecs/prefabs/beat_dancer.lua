@@ -39,6 +39,7 @@ return function(globalSystem, position)
         :addComponent('PrintDebugMessage')
         :addComponent('SyncAnimationToBeat')
         :addComponent('ScoreCounter')
+        :addComponent('OnSunriseDieOutdoors')
 
     return ent
 end

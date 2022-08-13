@@ -7,14 +7,11 @@ return function(globalSystem)
 
     local ent =  globalSystem:newEntity()
         :addComponent('Position', {position = Vector(32, 256)})
+        :addComponent('Velocity', {velocity = Vector(0,0)})
         :addComponent('DrawRectangle', {size = Vector(16, 16)})
-        -- :addComponent('DrawAnimation', {center = Vector(14, 14)})
         :addComponent('Controlled')
-        :addComponent('StateMachine', {states = stateMachine()})
-        :addComponent('DrawOrder', {order = config.draw.layers.bg})
-
-        local stateMachine = ent:getComponentByName("StateMachine")
-        stateMachine:goToState("sun_idle")
+        :addComponent('DrawOrder', {order = config.draw.layers.bgSun})
+        :addComponent('MoveWithSun', {speed = config.sun.speed})
 
     return ent
 end

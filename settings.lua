@@ -28,13 +28,14 @@ config = {
     draw = {
         layers = { -- must be consecutive
             bgFar = 1,
-            bg = 2,
-            bgFront = 3,
-            common = 4,
-            characterBack = 5,
-            characterFront = 6,
-            bullets = 7,
-            ui = 8,
+            bgSun = 2,
+            bg = 3,
+            bgFront = 4,
+            common = 5,
+            characterBack = 6,
+            characterFront = 7,
+            bullets = 8,
+            ui = 9,
         },
     },
     render = {
@@ -67,13 +68,17 @@ config = {
         outerWallwidth = 4,
         outerWallHeight = 64,
 
-        innerWallLevel = 190-20, -- houseFloorLevel - 20
+        innerWallLevel = 190-15, -- houseFloorLevel - 15
 
         innerWallwidth = 4,
         innerWallHeight = 64,
+
+        doorHeight = 32,
+        doorWidth  = 6,
     },
     sun = {
-        speed = 10
+        speed = 15,
+        timerToLeave = 20
     },
     teleportDistance = 16
 }

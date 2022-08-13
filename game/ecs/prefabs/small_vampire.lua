@@ -40,6 +40,7 @@ return function(globalSystem, position)
         :addComponent('ScoreCounter')
 
         :addComponent('PrintDebugMessage')
+        :addComponent('OnSunriseDieOutdoors')
 
     return ent
 end

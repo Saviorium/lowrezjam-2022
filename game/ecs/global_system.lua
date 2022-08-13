@@ -17,6 +17,7 @@ local ParticleSystem        = require "game.ecs.systems.particle_system"
 local RotateSystem          = require "game.ecs.systems.rotate_system"
 local ScoreSystem           = require "game.ecs.systems.score_system"
 local TriggerSystem         = require "game.ecs.systems.trigger_system"
+local SunSystem             = require "game.ecs.systems.sun_system"
 
 
 local EventManager = require "engine.events.event_manager"
@@ -51,6 +52,7 @@ local GlobalSystem = Class {
             ParticleSystem(self),
             SoundSystem(self),
             TriggerSystem(self),
+            SunSystem(self),
         }
     end
 }

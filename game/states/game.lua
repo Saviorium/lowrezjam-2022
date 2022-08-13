@@ -38,6 +38,10 @@ function state:enter(prev_state, args)
 
     local doorLeft = Door(self.world, Vector(56, 190-32)):addComponent("Flipped", {flipped = true})
     local doorRight = Door(self.world, Vector(184, 190-32))
+
+    doorLeft:getComponentByName('PhysicsCollider').collider:moveTo(config.positions.yardWidth-2, config.positions.innerWallLevel)
+    doorRight:getComponentByName('PhysicsCollider').collider:moveTo(config.positions.yardWidth + config.positions.houseWidth+2, config.positions.innerWallLevel)
+
     local candleLeft = Candle(self.world, Vector(108, 176-32))
     local candleRight = Candle(self.world, Vector(142, 176-32))
 

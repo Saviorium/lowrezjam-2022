@@ -9,8 +9,8 @@ local SunRise = Class {
         self.nextState = "sun_down"
         self.timeout = 0.3
 
-        self.timerToLeave = 10
         self.tutorialShown = false
+        self.timerToLeave = config.sun.timerToLeave
     end
 }
 
