@@ -1,0 +1,37 @@
+{ "frames": [
+   {
+    "filename": "sun_0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 44, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 42, "h": 41 },
+    "sourceSize": { "w": 42, "h": 41 },
+    "duration": 1000
+   },
+   {
+    "filename": "sun_1.aseprite",
+    "frame": { "x": 44, "y": 0, "w": 44, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 42, "h": 41 },
+    "sourceSize": { "w": 42, "h": 41 },
+    "duration": 1000
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.30",
+  "image": "sun.png",
+  "format": "RGBA8888",
+  "size": { "w": 88, "h": 43 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "dancing", "from": 0, "to": 1, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

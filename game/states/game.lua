@@ -120,7 +120,7 @@ function state:keypressed(key)
         MusicPlayer:play("nightChill", "forth-bar")
     end
     if key == "e" then
-        MusicPlayer:play("night", "forth-bar")
+        MusicPlayer:play("day", "forth-bar")
     end
     if key == "t" then
         StateManager.switch(states.final, {
