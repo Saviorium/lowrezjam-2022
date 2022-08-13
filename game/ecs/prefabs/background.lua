@@ -28,7 +28,7 @@ return function(globalSystem)
     local bloomBgOverlay =  globalSystem:newEntity()
         :addComponent('Position', {position = Vector(0, -32)})
         :addComponent('Image', {image = bloomImage})
-        :addComponent('DrawOrder', {order = config.draw.layers.bgFront})
+        :addComponent('DrawOrder', {order = config.draw.layers.characterBack})
         :addComponent('Colored', {color = {1, 1, 1, 0}})
         :addComponent('Cropped', {size = Vector(bloomImage:getWidth(), 1)})
         :addComponent('DoWithSun', {

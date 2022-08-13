@@ -113,15 +113,6 @@ function state:mousereleased(x, y)
 end
 
 function state:keypressed(key)
-    if key == "q" then
-        MusicPlayer:play("night", "forth-bar")
-    end
-    if key == "w" then
-        MusicPlayer:play("nightChill", "forth-bar")
-    end
-    if key == "e" then
-        MusicPlayer:play("day", "forth-bar")
-    end
     if key == "t" then
         StateManager.switch(states.final, {
                 playerScore = self.world.systems.ScoreSystem.overallScore
