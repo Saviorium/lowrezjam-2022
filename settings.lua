@@ -92,13 +92,14 @@ config = {
         speed = 15,
         timerToLeave = 20
     },
-    teleportDistance = 16
+    teleportDistance = 16,
+    beatsForMove = 4
 }
 
 Debug = {
     showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
-    drawCollidersDebug = true,
+    drawCollidersDebug = false,
     BeatLogger = 2,
 }

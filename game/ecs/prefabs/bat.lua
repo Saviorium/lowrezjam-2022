@@ -32,7 +32,8 @@ return function(globalSystem, position)
 
         :addComponent('StateMachine', {states = stateMachine()})
         -- :addComponent('FlyInRandomDirection', {input="startMove"})
-        :addComponent('BatCombo')
+        :addComponent('BatCombo', {entity = ent})
+        :addComponent('BatComboSecond', {entity = ent})
         :addComponent('GoToCenter')
 
         :addComponent('ScoreCounter')

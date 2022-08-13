@@ -16,10 +16,12 @@ return {
         elseif self.entity:getComponentByName('SmallCombo') then
             color = config.colors.green
         end
+        self.inputHit = true
+        entity:getComponentByName('ScoreCounter').hit = true
         require "game.ecs.prefabs.score_points" (entity.globalSystem, entity:getComponentByName("Position").position, self.scorePerSucessInput, color)
     end,
 
     dropScoreMultiplyer = function(self)
-        self.scorePerSucessInput = 1
+        self.inputLose = true 
     end
 }

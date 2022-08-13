@@ -36,6 +36,8 @@ return function(globalSystem, position)
 
         :addComponent('StateMachine', {states = stateMachine()})
         :addComponent('SmallCombo')
+        :addComponent('SmallComboSecond')
+        :addComponent('SmallComboThird')
         :addComponent('GoToCenter')
         :addComponent('ScoreCounter')
 

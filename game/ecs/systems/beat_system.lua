@@ -68,10 +68,11 @@ end
 function BeatSystem:sendInputToEntites(input)
     for _, entity in pairs(self.pool) do
         local beatMapping = entity:getComponentByName("BeatControlled")
-        beatMapping.beatsFromLastInput = 0
         local controller = entity:getComponentByName("Controlled")
         for _, beatInput in pairs(beatMapping.beatMap) do
             if input[beatInput.listen] then
+                beatMapping.beatsBeforeInput = math.floor(beatMapping.beatsFromLastInput-0.5) % MusicPlayer:getSignature() + 1
+                beatMapping.beatsFromLastInput = 0
                 controller.inputSnapshot[beatInput.send] = 1
             end
         end

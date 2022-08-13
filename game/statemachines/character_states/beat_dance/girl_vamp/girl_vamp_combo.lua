@@ -6,8 +6,7 @@ local GirlVampCombo = Class {
     init = function(self)
         State.init(self)
         self.name = "girl_vamp_combo_first"
-        self.timeout = 5 * FRAME
-        self.timeoutInBeats = 4
+        self.timeoutInBeats = config.beatsForMove - 1
         self.nextState = "idle"
 
         self.randomMoveDistance = config.randomMoveDistance
@@ -28,9 +27,6 @@ function GirlVampCombo:onEnter(entity, params)
     self.inputController.inputSnapshot.move.y = self.direction.y
 
     entity:getComponentByName('Falling').isGrounded = false
-
-    self.scoreCounter = entity:getComponentByName("ScoreCounter")
-    self.scoreCounter:addNextScore(entity)
 end
 
 function GirlVampCombo:onExit(entity)
@@ -40,7 +36,6 @@ end
 
 function GirlVampCombo:update(entity, dt)
     local stateMachine = entity:getComponentByName("StateMachine")
-    local beatsFromLastInput = self.beatControlled.beatsFromLastInput or 0
 
     if self.beat > self.timeoutInBeats then
         stateMachine:goToState(self.nextState)

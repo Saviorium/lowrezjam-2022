@@ -1,21 +1,17 @@
 local CharacterState = require "game.statemachines.default_character_state"
 local State = require "game.statemachines.state"
 
-local MoveInRandomDirection = Class {
+local SmallVampCombo = Class {
     __includes = State,
     init = function(self)
         State.init(self)
         self.name = "small_vamp_combo_third"
-        self.timeoutInBeats = 2
+        self.timeoutInBeats = config.beatsForMove - 3
         self.nextState = "idle"
-
-        self.randomMoveDistance = config.randomMoveDistance
-        self.direction = nil
-        self.inputController = nil
     end
 }
 
-function MoveInRandomDirection:onEnter(entity, params)
+function SmallVampCombo:onEnter(entity, params)
     -- local animator = entity:getComponentByName("Animator").animator
     -- animator:setVariable("state", "dash_back_active")
     self.beat = 0
@@ -26,7 +22,7 @@ function MoveInRandomDirection:onEnter(entity, params)
 end
 
 
-function MoveInRandomDirection:update(entity, dt)
+function SmallVampCombo:update(entity, dt)
     local stateMachine = entity:getComponentByName("StateMachine")
 
     self.direction = self.direction or Vector(love.math.random(-1,1), 0)
@@ -39,4 +35,4 @@ function MoveInRandomDirection:update(entity, dt)
     self.beat = self.beat + (self.beatControlled.beatDelta or 0)
 end
 
-return MoveInRandomDirection
+return SmallVampCombo

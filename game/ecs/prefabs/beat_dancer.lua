@@ -33,6 +33,7 @@ return function(globalSystem, position)
 
         :addComponent('StateMachine', {states = stateMachine()})
         :addComponent('NormCombo')
+        :addComponent('NormComboSecond')
         :addComponent('GoToCenter')
 
         :addComponent('CameraToObjects')

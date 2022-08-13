@@ -6,17 +6,14 @@ local BatCombo = Class {
     init = function(self)
         State.init(self)
         self.name = "bat_combo_second"
-        self.timeoutInBeats = 5
+        self.timeoutInBeats = config.beatsForMove - 2
         self.nextState = "idle"
 
     end
 }
 
 function BatCombo:onEnter(entity, params)
-    -- local animator = entity:getComponentByName("Animator").animator
-    -- animator:setVariable("state", "dash_back_active")
     self.beat = 0
-    self.input = params.input
 
     self.inputController = entity:getComponentByName('Controlled')
     self.beatControlled  = entity:getComponentByName("BeatControlled")

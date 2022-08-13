@@ -2,8 +2,6 @@ local animator = require "game.ecs.prefabs.dancer_animator"
 local stateMachine = require "game.statemachines.character_states"
 
 return function(globalSystem)
-    -- local animatorInstance = animator:newInstance(AssetManager:getAnimation("disco-ball"))
-    -- animatorInstance:setVariable("state", "dancing")
 
     local ent =  globalSystem:newEntity()
         :addComponent('Position', {position = Vector(32, 256)})
