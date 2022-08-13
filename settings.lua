@@ -44,7 +44,7 @@ config = {
         },
     },
     render = {
-        screenSize = { x = 64, y = 64 },
+        screenSize = { x = 500, y = 500 },
         initialResolution = 4,
         drawOrderGrid = 4
     },
