@@ -24,6 +24,10 @@ config = {
         blue = { 0.1, 0.2, 0.9 },
         green = { 0.1, 0.9, 0.2 },
         purple = { 0.9, 0.1, 0.7 },
+        rulerMissBg = { 1, 1, 1 },
+        rulerHitBg = Utils.colorFromHex("1e8a4c"),
+        rulerKeyMark = Utils.colorFromHex("cccccc"),
+        rulerBeatMark = Utils.colorFromHex("ffffff"),
     },
     draw = {
         layers = { -- must be consecutive
@@ -46,7 +50,7 @@ config = {
     randomMoveDistance = 10,
 
     music = {
-        rhythmHitTolerance = 0.2,
+        rhythmHitTolerance = 0.21,
         rhythmCompleteMiss = 0.4,
     },
     speed = {
@@ -75,6 +79,14 @@ config = {
 
         doorHeight = 32,
         doorWidth  = 6,
+
+        beatRuler = {
+            position = { x = 0, y = 64-1 },
+            size = { x = 64, y = 1 },
+            marksPos = { x = 0, y = -1 },
+            marksSize = { x = 1, y = 1 },
+            keysToShow = 8,
+        },
     },
     sun = {
         speed = 15,

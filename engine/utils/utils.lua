@@ -71,4 +71,8 @@ function Utils.count(table, condition)
     return result
 end
 
+Utils.colorFromHex = function (hex, value)  -- s-walrus/hex2color
+    return {tonumber(string.sub(hex, 1, 2), 16)/256, tonumber(string.sub(hex, 3, 4), 16)/256, tonumber(string.sub(hex, 5, 6), 16)/256, value or 1}
+end
+
 return Utils

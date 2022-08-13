@@ -18,6 +18,7 @@ local RotateSystem          = require "game.ecs.systems.rotate_system"
 local ScoreSystem           = require "game.ecs.systems.score_system"
 local TriggerSystem         = require "game.ecs.systems.trigger_system"
 local SunSystem             = require "game.ecs.systems.sun_system"
+local BeatUiSystem          = require "game.ecs.systems.beat_ui_system"
 
 
 local EventManager = require "engine.events.event_manager"
@@ -34,13 +35,14 @@ local GlobalSystem = Class {
         self.eventManager = EventManager()
         self.systems = { -- take system here if you need a quick dirty fix
             ScoreSystem = ScoreSystem(self),
+            BeatSystem = BeatSystem(self),
         }
         self._systems = { -- order is important
 
             ControlSystem(self),
             self.systems.ScoreSystem,
             RotateSystem(self),
-            BeatSystem(self),
+            self.systems.BeatSystem,
             StatesSystem(self),
             BeatSyncSystem(self),
             ActionSystem(self),
@@ -50,6 +52,7 @@ local GlobalSystem = Class {
             CameraSystem(self),
             DrawSystem(self),
             ParticleSystem(self),
+            BeatUiSystem(self),
             SoundSystem(self),
             TriggerSystem(self),
             SunSystem(self),

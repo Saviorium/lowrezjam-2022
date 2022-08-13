@@ -1,8 +1,8 @@
-require "settings"
-
 Utils = require "engine.utils.utils"
 Vector = require "lib.hump.vector"
 Class = require "lib.hump.class"
+
+require "settings"
 
 prof  = require "lib.jprof.jprof"
 
@@ -58,6 +58,7 @@ function love.draw()
             love.graphics.print(""..tostring(love.timer.getFPS( )), 2, 2)
         end
     end )
+    love.graphics.setColor(1, 1, 1, 1)
     pixelCanvas:draw()
 
     prof.pop("frame")
