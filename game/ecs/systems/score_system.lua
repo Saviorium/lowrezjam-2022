@@ -33,6 +33,8 @@ function ScoreSystem:update(dt)
             end
 
             require "game.ecs.prefabs.score_points" (entity.globalSystem, entity:getComponentByName("Position").position, self.currentScore * self.scoreMultiplyer, color)
+        
+            self.overallScore = self.overallScore + math.floor(( self.currentScore ))
         end
         score.inputHit = false
         score.inputLose = false
@@ -44,7 +46,6 @@ function ScoreSystem:update(dt)
         end
     end
     if needToRiseScore then
-        self.overallScore = self.overallScore + math.floor((self.currentScore - self.currentScore * self.scoreMultiplyer))
         self.currentScore = self.currentScore * self.scoreMultiplyer
     elseif needToDropMulti then
         self.currentScore = 1
