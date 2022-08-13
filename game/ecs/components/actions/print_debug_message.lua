@@ -11,6 +11,6 @@ return {
     end,
 
     onActive = function(self)
-        print("Beat!")
+        -- print("Beat!")
     end
 }
