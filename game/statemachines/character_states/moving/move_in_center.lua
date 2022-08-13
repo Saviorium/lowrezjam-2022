@@ -34,8 +34,8 @@ function MoveInRandomDirection:update(entity, dt)
     local velocity = entity:getComponentByName("Velocity")
     local position = entity:getComponentByName("Position")
 
-    if position.position.x > config.positions.yardWidth/2 and position.position.x < config.positions.yardWidth or
-       position.position.x > config.positions.yardWidth + config.positions.houseWidth and position.position.x < config.positions.yardWidth + config.positions.houseWidth - 9 + config.positions.rampWidth then
+    if position.position.x > config.positions.yardWidth/2 - 8 and position.position.x < config.positions.yardWidth or
+       position.position.x > config.positions.yardWidth + config.positions.houseWidth and position.position.x < config.positions.yardWidth + config.positions.houseWidth - 1 + config.positions.rampWidth then
         self.inputController.inputSnapshot.move.y = (self.direction.y > 0 and 1 or -1) 
     end
 
