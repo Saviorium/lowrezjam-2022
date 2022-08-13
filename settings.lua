@@ -19,6 +19,10 @@ config = {
         x=256,
         y=256,
     },
+    camera = {
+        topLeft = { x = 0, y = 0 },
+        size = { x = 256, y = 239 },
+    },
     colors = {
         red = { 0.9, 0.1, 0.2 },
         blue = { 0.1, 0.2, 0.9 },

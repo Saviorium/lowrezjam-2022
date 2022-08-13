@@ -7,9 +7,13 @@ local MouseCameraSystem = Class {
         self.mainCamera = nil
     end,
 
+    drawableWorldTopLeft = Vector(
+        config.camera.topLeft.x,
+        config.camera.topLeft.y
+    ),
     drawableWorldSize = Vector(
-        config.worldSize.x - config.render.screenSize.x,
-        config.worldSize.y - config.render.screenSize.y
+        config.camera.size.x - config.render.screenSize.x,
+        config.camera.size.y - config.render.screenSize.y
     ),
 }
 
@@ -19,8 +23,8 @@ function MouseCameraSystem:draw()
     mouseX = mouseX / love.graphics.getWidth()
     mouseY = mouseY / love.graphics.getHeight()
 
-    local worldPosX = math.lerp(0, self.drawableWorldSize.x, mouseX)
-    local worldPosY = math.lerp(0, self.drawableWorldSize.y, mouseY)
+    local worldPosX = math.lerp(self.drawableWorldTopLeft.x, self.drawableWorldSize.x, mouseX)
+    local worldPosY = math.lerp(self.drawableWorldTopLeft.y, self.drawableWorldSize.y, mouseY)
     love.graphics.translate(math.floor(-worldPosX), math.floor(-worldPosY))
 end
 
