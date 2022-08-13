@@ -5,17 +5,18 @@ local SunSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
         System.init(self, {'SunControlled'})
-        self.statesQueue = {Night = {timer = 60, next = 'BeforeSunrise'},
-                            BeforeSunrise = {timer = 10, next = 'Sunrise', direction = 'up'},
-                            Sunrise = {timer = 10, next = 'Morning', direction = 'up'},
-                            Morning = {timer = 15, next = 'Noon', direction = 'up'},
+        self.statesQueue = {Night = {timer = 1, next = 'BeforeSunrise'},
+                            BeforeSunrise = {timer = 17, next = 'Sunrise'},
+                            Sunrise = {timer = 17, next = 'Morning', direction = 'up', speed = 0.5},
+                            Morning = {timer = 1, next = 'Noon', direction = 'up'},
                             Noon = {timer = 10, next = 'Afternoon'},
                             Afternoon = {timer = 10, next = 'Sunset', direction = 'down'},
-                            Sunset = {timer = 10, next = 'Night', direction = 'down'} }
+                            Sunset = {timer = 17, next = 'Night', direction = 'down', speed = 0.5} }
         self.currentDayState = 'Night'
         self.timer = self.statesQueue[self.currentDayState].timer
         self.tutorialShown = false
         self.globalSystem = globalSystem
+
     end
 }
 
