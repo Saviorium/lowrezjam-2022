@@ -49,7 +49,6 @@ return function(globalSystem)
 
                 local entityCrop = entity:getComponentByName("Cropped")
                 entityCrop.size.y = math.lerp(0, bloomImage:getHeight(), self.showAmount)
-                vardump(bloomImage:getHeight(), self.showAmount)
             end
         })
 

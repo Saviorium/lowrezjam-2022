@@ -44,7 +44,7 @@ config = {
         },
     },
     render = {
-        screenSize = { x = 500, y = 500 },
+        screenSize = { x = 64, y = 64 },
         initialResolution = 4,
         drawOrderGrid = 4
     },
@@ -98,9 +98,9 @@ config = {
 }
 
 Debug = {
-    showFps = 0,
+    showFps = 1,
     mousePos = 0,
     RhythmPrint = 5,
-    drawCollidersDebug = false,
+    drawCollidersDebug = true,
     BeatLogger = 2,
 }
