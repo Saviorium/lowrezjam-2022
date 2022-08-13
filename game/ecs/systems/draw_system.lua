@@ -78,6 +78,14 @@ function DrawSystem:draw()
             else
                 entityColor = {1,1,1,1}
             end
+
+            local blendComp = entity:getComponentByName("ColorBlendModifier")
+            if blendComp then
+                love.graphics.setBlendMode(blendComp.blendMode, blendComp.blendAlphaMode)
+            else
+                love.graphics.setBlendMode("alpha")
+            end
+
             for _, drawable in pairs(entity:getComponentsByType("Drawable")) do
                 love.graphics.push()
                 if rotateEntity then

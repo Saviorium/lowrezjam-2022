@@ -5,12 +5,12 @@ local SunSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
         System.init(self, {'SunControlled'})
-        self.statesQueue = {Night = {timer = 60, next = 'BeforeSunrise'}, 
-                            BeforeSunrise = {timer = 10, next = 'Sunrise', direction = 'up'}, 
-                            Sunrise = {timer = 10, next = 'Morning', direction = 'up'}, 
-                            Morning = {timer = 15, next = 'Noon', direction = 'up'}, 
-                            Noon = {timer = 10, next = 'Afternoon'}, 
-                            Afternoon = {timer = 10, next = 'Sunset', direction = 'down'}, 
+        self.statesQueue = {Night = {timer = 60, next = 'BeforeSunrise'},
+                            BeforeSunrise = {timer = 10, next = 'Sunrise', direction = 'up'},
+                            Sunrise = {timer = 10, next = 'Morning', direction = 'up'},
+                            Morning = {timer = 15, next = 'Noon', direction = 'up'},
+                            Noon = {timer = 10, next = 'Afternoon'},
+                            Afternoon = {timer = 10, next = 'Sunset', direction = 'down'},
                             Sunset = {timer = 10, next = 'Night', direction = 'down'} }
         self.currentDayState = 'Night'
         self.timer = self.statesQueue[self.currentDayState].timer
@@ -28,11 +28,11 @@ function SunSystem:update(dt)
         self.timer = self.statesQueue[self.currentDayState].timer
 
         if self.currentDayState == 'Night' or self.currentDayState == 'Sunset' then
-            MusicPlayer:play("night", "new-bar")
+            MusicPlayer:play("night", "forth-bar")
         elseif self.currentDayState == 'BeforeSunrise' then
-            MusicPlayer:play("nightChill", "new-bar")
+            MusicPlayer:play("nightChill", "forth-bar")
         elseif self.currentDayState == 'Sunrise' then
-            MusicPlayer:play("day", "new-bar")
+            MusicPlayer:play("day", "forth-bar")
         end
         print(self.currentDayState)
     end

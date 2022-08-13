@@ -5,7 +5,7 @@ return function(globalSystem)
         :addComponent('Image', {image = AssetManager:getImage("bg-sky")})
         :addComponent('Scaled', { scale = Vector(16, 1) })
         :addComponent('DrawOrder', {order = config.draw.layers.bgFar})
-        :addComponent('MoveWithSun', {speed = config.sun.speed})
+        :addComponent('MoveWithSun', {speed = config.sun.speed*3.4})
 
 
     return ent
