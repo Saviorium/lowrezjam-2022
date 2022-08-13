@@ -101,9 +101,9 @@ function state:enter(prev_state, args)
 
 
     local tutorialZxcv = Tutorial(self.world, "tutorial-zxcv", Vector(4, 26))
-    print("press QWERM to switch music")
+    print("press QWE to switch music")
 
-    MusicPlayer:play("night1", "forth-bar")
+    MusicPlayer:play("night", "forth-bar")
 end
 
 function state:mousepressed(x, y)
@@ -113,27 +113,20 @@ function state:mousereleased(x, y)
 end
 
 function state:keypressed(key)
-    if key == "m" then
-        MusicPlayer:play("testLoop", "new-bar")
-    end
     if key == "q" then
-        MusicPlayer:play("night1", "forth-bar")
+        MusicPlayer:play("night", "forth-bar")
     end
     if key == "w" then
-        MusicPlayer:play("night2", "forth-bar")
+        MusicPlayer:play("nightChill", "forth-bar")
     end
     if key == "e" then
-        MusicPlayer:play("night3", "forth-bar")
-    end
-    if key == "r" then
-        MusicPlayer:play("night1Chill", "forth-bar")
+        MusicPlayer:play("night", "forth-bar")
     end
     if key == "t" then
         StateManager.switch(states.final, {
                 playerScore = self.world.systems.ScoreSystem.overallScore
             })
     end
-            
 end
 
 function state:draw()

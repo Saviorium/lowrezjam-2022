@@ -1,23 +1,10 @@
 local musicData
 
 musicData = {
-    testLoop = {
-        fileName = "test-synthwave-loop-1",
+    night = {
+        fileName = "vampire-dance-night",
         loop = true,
-        loopPoint = 0,
-        volume = 0.25,
-        syncPoints = {
-            {
-                time = 0,
-                timeSignature = 4,
-                bpm = 96
-            },
-        }
-    },
-    night1 = {
-        fileName = "vampire-dance-night1",
-        loop = true,
-        loopPoint = 16.69,
+        loopPoint = 16.695,
         volume = 0.25,
         syncPoints = {
             {
@@ -27,8 +14,8 @@ musicData = {
             },
         }
     },
-    night1Chill = {
-        fileName = "vampire-dance-night1-chill",
+    nightChill = {
+        fileName = "vampire-dance-late-night",
         loop = true,
         loopPoint = 0,
         volume = 0.25,
@@ -40,29 +27,16 @@ musicData = {
             },
         }
     },
-    night2 = {
-        fileName = "vampire-dance-night2",
+    day = {
+        fileName = "vampire-dance-day",
         loop = true,
-        loopPoint = 0,
+        loopPoint = 16.695,
         volume = 0.25,
         syncPoints = {
             {
                 time = 0,
                 timeSignature = 4,
-                bpm = 140
-            },
-        }
-    },
-    night3 = {
-        fileName = "vampire-dance-night3",
-        loop = true,
-        loopPoint = 0,
-        volume = 0.25,
-        syncPoints = {
-            {
-                time = 0,
-                timeSignature = 4,
-                bpm = 70
+                bpm = 115
             },
         }
     },
