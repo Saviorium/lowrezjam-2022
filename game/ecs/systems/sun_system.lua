@@ -5,17 +5,18 @@ local SunSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
         System.init(self, {'SunControlled'})
-        self.statesQueue = {Night = {timer = 1, next = 'BeforeSunrise'},
-                            BeforeSunrise = {timer = 17, next = 'Sunrise'},
-                            Sunrise = {timer = 17, next = 'Morning', direction = 'up', speed = 0.5},
+        self.statesQueue = {Night = {timer = 60, next = 'BeforeSunrise'},
+                            BeforeSunrise = {timer = 17, next = 'Sunrise', direction = 'up', speed = 0.20},
+                            Sunrise = {timer = 17, next = 'Morning', direction = 'up', speed = 0.30},
                             Morning = {timer = 1, next = 'Noon', direction = 'up'},
-                            Noon = {timer = 10, next = 'Afternoon'},
-                            Afternoon = {timer = 10, next = 'Sunset', direction = 'down'},
+                            Noon = {timer = 17, next = 'Afternoon'},
+                            Afternoon = {timer = 1, next = 'Sunset', direction = 'down'},
                             Sunset = {timer = 17, next = 'Night', direction = 'down', speed = 0.5} }
         self.currentDayState = 'Night'
         self.timer = self.statesQueue[self.currentDayState].timer
         self.tutorialShown = false
         self.globalSystem = globalSystem
+        self.counter = 0
 
     end
 }
@@ -35,7 +36,14 @@ function SunSystem:update(dt)
         elseif self.currentDayState == 'Sunrise' then
             MusicPlayer:play("day", "forth-bar")
         end
-        print(self.currentDayState)
+        if self.currentDayState == 'Night' then
+            self.counter = self.counter + 1
+        end
+        if self.counter == 2 then
+            StateManager.switch(states.final, {
+                    playerScore = self.globalSystem.systems.ScoreSystem.overallScore
+                })
+        end
     end
 
     if not self.tutorialShown and self.currentDayState == 'Sunrise' then

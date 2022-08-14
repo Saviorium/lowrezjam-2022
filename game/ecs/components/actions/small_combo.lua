@@ -16,7 +16,8 @@ return { -- abstract action
     onActive = function(self)
         local stateMachine = self.entity:getComponentByName("StateMachine")
         if stateMachine.currentState then
-            self.entity:getComponentByName('ScoreCounter'):addNextScore(self.entity)
+            -- self.entity:getComponentByName('ScoreCounter'):addNextScore(self.entity)
+            self.entity:getComponentByName('ScoreCounter'):keepScore(self.entity)
             stateMachine:goToState("small_vamp_combo_first", {input = self.input})
         end
     end
