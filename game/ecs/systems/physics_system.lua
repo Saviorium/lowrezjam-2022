@@ -23,7 +23,10 @@ function PhysicsSystem:handleUpdateEntityFunc(dt, entityId, entity)
                 -- print(delta.x, delta.y)
                 -- pos.x = pos.x + delta.x
                 -- pos.y = pos.y + delta.y
-                vel = vel + Vector(delta.x, delta.y)
+
+                -- vel = vel + Vector(delta.x, delta.y) -- memory leak?
+                vel.x = vel.x + delta.x
+                vel.y = vel.y + delta.y
             end
         end
         entity:getComponentByName("Velocity").velocity = vel

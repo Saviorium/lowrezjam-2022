@@ -103,7 +103,7 @@ config = {
 }
 
 Debug = {
-    showFps = 0,
+    showFps = 1,
     mousePos = 0,
     RhythmPrint = 1,
     drawCollidersDebug = false,
