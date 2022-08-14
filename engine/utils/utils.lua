@@ -71,6 +71,20 @@ function Utils.count(table, condition)
     return result
 end
 
+-- see Object.assign() in JS
+-- example: Utils.assign({foo = 1, baz = 2}, {foo = 2, fooz = 3}, {foo = 5, ff = 11}) => {foo = 5, baz = 2, fooz = 3, ff = 11}
+-- shallow copy, target can be {} to not modify it
+Utils.assign = function (target, ...)
+    local sources = {...}
+    if not target then target = {} end
+    for _, source in pairs(sources) do
+        for k, v in pairs(source) do
+            target[k] = v
+        end
+    end
+    return target
+end
+
 Utils.colorFromHex = function (hex, value)  -- s-walrus/hex2color
     return {tonumber(string.sub(hex, 1, 2), 16)/256, tonumber(string.sub(hex, 3, 4), 16)/256, tonumber(string.sub(hex, 5, 6), 16)/256, value or 1}
 end

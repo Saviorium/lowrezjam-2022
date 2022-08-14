@@ -1,5 +1,6 @@
 local animator = require "game.ecs.prefabs.dancer_animator"
 local stateMachine = require "game.statemachines.character_states"
+local addDeathParticleEmitter = require "game.ecs.prefabs.death_particle_emitter"
 
 return function(globalSystem, position)
     local width, height = 7,14
@@ -23,8 +24,8 @@ return function(globalSystem, position)
 
         :addComponent('Controlled')
         :addComponent('UserControlled')
-        :addComponent('ParticleEmitter', {particles = {darkSpark = {spawn = 0}}})
-        :addComponent('EmitParticles', {particleType = "darkSpark", emitAmount = 100})
+        :addComponent('ParticleEmitter', {particles = {blueSpark = {spawn = 0}}})
+        :addComponent('EmitParticles', {particleType = "blueSpark", emitAmount = 100})
 
         :addComponent('Walking', {maxSpeed = config.speed.fast})
         :addComponent('Falling')
@@ -41,6 +42,7 @@ return function(globalSystem, position)
         :addComponent('SyncAnimationToBeat')
         :addComponent('ScoreCounter')
         :addComponent('OnSunriseDieOutdoors')
+    addDeathParticleEmitter(ent)
 
     return ent
 end
