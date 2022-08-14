@@ -8,19 +8,19 @@ return {
     maxFallingSpeed = 15,
 
     update = function (self, dt, entity)
-        prof.push("Jumping for = "..entity.id)
+        prof.push("Falling for = "..entity.id)
 
         local position = entity:getComponentByName("Position").position
         local velocity = entity:getComponentByName("Velocity").velocity
-        local collider = entity:getComponentByName("PhysicsCollider").collider
+        local colliderComp = entity:getComponentByName("PhysicsCollider")
 
         local collisionWithEnv = false
-        if collider then
-        for shape, delta in pairs(entity.globalSystem.HC:collisions(collider)) do
-            if shape.type == 'Environment' and delta.y < -0.1 then
-                collisionWithEnv = true
+        if colliderComp and colliderComp.collider and colliderComp.collisions then
+            for shape, delta in pairs(colliderComp.collisions) do
+                if shape.type == 'Environment' and delta.y < -0.1 then
+                    collisionWithEnv = true
+                end
             end
-        end
             velocity.y = math.min(velocity.y + self.g, self.maxFallingSpeed)
 
             if collisionWithEnv then

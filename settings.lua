@@ -53,6 +53,7 @@ config = {
         drawOrderGrid = 4
     },
     randomMoveDistance = 10,
+    scaleKeyBind = false,
 
     music = {
         rhythmHitTolerance = 0.21,

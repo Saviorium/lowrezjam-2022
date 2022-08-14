@@ -1,0 +1,1 @@
+"C:\Program Files\LOVE\lovec.exe" .\lib\jprof lowrezjam-2022 prof.mpack

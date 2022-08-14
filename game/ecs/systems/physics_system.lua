@@ -13,11 +13,11 @@ function PhysicsSystem:handleUpdateEntityFunc(dt, entityId, entity)
     --self:handleEventSystemIncomes()
 
     for entityId, entity in pairs(self.pool) do
-        local collider = entity:getComponentByName("PhysicsCollider").collider
-        local pos      = entity:getComponentByName("Position").position
-        local vel      = entity:getComponentByName("Velocity").velocity
+        local colliderComp = entity:getComponentByName("PhysicsCollider")
+        local pos = entity:getComponentByName("Position").position
+        local vel = entity:getComponentByName("Velocity").velocity
 
-        for shape, delta in pairs(self.globalSystem.HC:collisions(collider)) do
+        for shape, delta in pairs(colliderComp.collisions) do
             if shape.type == 'Environment' then
                 -- delta = Vector(delta.x, delta.y):normalized()
                 -- print(delta.x, delta.y)

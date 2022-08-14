@@ -20,6 +20,7 @@ local TriggerSystem         = require "game.ecs.systems.trigger_system"
 local SunSystem             = require "game.ecs.systems.sun_system"
 local BeatUiSystem          = require "game.ecs.systems.beat_ui_system"
 local CropSystem            = require "game.ecs.systems.crop_system"
+local CollisionSystem       = require "game.ecs.systems.collision_system"
 
 
 local EventManager = require "engine.events.event_manager"
@@ -47,6 +48,7 @@ local GlobalSystem = Class {
             StatesSystem(self),
             BeatSyncSystem(self),
             ActionSystem(self),
+            CollisionSystem(self),
             MovingSystem(self),
             PhysicsSystem(self),
             AnimationSystem(self),

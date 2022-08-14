@@ -4,7 +4,7 @@ function love.conf(t)
     t.window.title = "lowrezjam-2022"
     t.window.vsync = 1
     -- t.window.fullscreen = true
-    PROF_CAPTURE = false
+    PROF_CAPTURE = true
 end
 
 function love.run()

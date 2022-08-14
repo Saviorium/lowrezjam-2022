@@ -83,7 +83,7 @@ function love.mousereleased(x, y)
 end
 
 function love.keypressed(key)
-    if key == "1" or key == "2" or key == "3" or key == "4" or key == "5" then
+    if config.scaleKeyBind and (key == "1" or key == "2" or key == "3" or key == "4" or key == "5") then
         local scale = tonumber(key)
         pixelCanvas:setScale(scale)
     end
