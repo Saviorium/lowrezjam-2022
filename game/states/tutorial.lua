@@ -2,9 +2,9 @@ local state = {}
 
 function state:enter(prev_state, args)
     -- self.image = AssetManager:getImage("tutorial")
-    self.tutorialHead = 'Press buttons in beat'
+    self.tutorialHead = 'Press buttons to the beat'
     self.tutorialButtons = 'Z, X, C, V'
-    self.tutorialScript = 'Everything in world dancing in beat'
+    self.tutorialScript = 'Everything in world is dancing too'
 end
 
 function state:mousepressed(x, y)

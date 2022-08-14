@@ -8,6 +8,7 @@ return function(globalSystem)
         :addComponent('Position', {position = Vector(123, 196-32)})
         :addComponent('Animator', {animator = animatorInstance})
         :addComponent('DrawAnimation', {center = Vector(11, 12)})
+        :addComponent('DrawOrder', {layer = config.draw.layers.bgFront})
         :addComponent('SyncAnimationToBeat')
         :addComponent('Controlled')
 
